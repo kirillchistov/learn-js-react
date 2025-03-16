@@ -1,5 +1,8 @@
-// передаем в пропсы ревью, ожидаем там юзера, текст
-
 export const Review = ({ review }) => {
-  return <>{review.user} {review.text}</>;
+  return (
+  <>
+    <h4>{review.user}</h4>
+    <i>{review.text}</i>
+  </>
+  );
 };

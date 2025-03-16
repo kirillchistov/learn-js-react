@@ -1,0 +1,15 @@
+.counter {
+  display: 'flex';
+  padding: 5px;
+  align-items: 'center';
+  justify-content: 'center';
+  border: 'none';
+};
+
+.buttonLeft {
+  margin-right: 0.6em;
+}
+
+.buttonRight {
+  margin-left: 0.6em;
+}
