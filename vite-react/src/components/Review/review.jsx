@@ -1,16 +1,5 @@
-// передаем в пропсы ревью, ожидаем там юзера, текст и рейтинг?
+// передаем в пропсы ревью, ожидаем там юзера, текст
 
-export const Review = ({review}) => {
-  const {user, text} = review;
-
-  return (
-    <li>
-      <h5>
-        {user}
-      </h5>
-      <i>
-        {text}
-      </i>
-    </li>
-  )
-}
+export const Review = ({ review }) => {
+  return <>{review.user} {review.text}</>;
+};
