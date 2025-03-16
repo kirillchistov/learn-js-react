@@ -12,7 +12,7 @@ export const RestaurantList = ({ restaurants, onSetActiveRestaurant, activeResta
   };
 
   return (
-    <div className={ListStyle.restlist}>
+    <div className={ListStyle.restList}>
       {restaurants.map((restaurant) => (
         <button
           key={restaurant.id}
@@ -21,7 +21,7 @@ export const RestaurantList = ({ restaurants, onSetActiveRestaurant, activeResta
           }}
           disabled={activeRestaurant.id === restaurant.id}
         >
-          <h2>{restaurant.name}</h2>
+          <h3 className={ListStyle.restHeading}>{restaurant.name}</h3>
         </button>
       ))}
     </div>
