@@ -1,7 +1,9 @@
 .restaurant {
-  border: 'solid';
+  padding: 1em;
+  border: 1px dashed #efefef;
+  border-radius: 0.5em;
 };
 
 .heading {
-  color: 'green';
+  color: green;
 }

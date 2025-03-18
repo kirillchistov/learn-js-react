@@ -1,7 +1,8 @@
 .header {
-  display: 'flex';
-  min-height: '100px';
-  align-items: 'center';
-  justify-content: 'center';
-  border: 'solid';
+  display: flex;
+  padding: 0.7em;
+  min-height: 1em;
+  align-items: flex-start;
+  justify-content: left;
+  border: 1px dashed #efefef;
 };

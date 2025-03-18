@@ -1,9 +1,9 @@
 .counter {
-  display: 'flex';
+  display: flex;
   padding: 5px;
-  align-items: 'center';
-  justify-content: 'center';
-  border: 'none';
+  align-items: center;
+  justify-content: center;
+  border: none;
 };
 
 .buttonLeft {
