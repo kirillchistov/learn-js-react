@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  width: 100%;
+  min-height: 0.5 em;
+  align-items: center;
+  align-content: center;
+  justify-content: left;
+  border: none;
+};
+
+.title {
+  color: #000;
+}

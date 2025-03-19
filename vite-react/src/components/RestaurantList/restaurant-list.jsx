@@ -1,5 +1,5 @@
-// import { useState } from "react";
-// import { Restaurant } from "../Restaurant/restaurant";
+// import { useState } from 'react';
+// import { Restaurant } from '../Restaurant/restaurant';
 import ListStyle from './restaurant-list.module.css';
 // TODO: Move function and button out
 export const RestaurantList = ({ restaurants, onSetActiveRestaurant, activeRestaurant}) => {

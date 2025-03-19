@@ -1,4 +1,5 @@
 import { Review } from '../Review/review';
+import { ReviewForm } from '../ReviewForm/review-form'
 
 export const Reviews = ({ reviews }) => {
   return (
@@ -11,6 +12,7 @@ export const Reviews = ({ reviews }) => {
           </li>
         ))}
       </ul>
+      <ReviewForm/>
     </div>
   );
 };

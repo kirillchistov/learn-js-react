@@ -1,6 +1,5 @@
 import {MenuItem} from '../MenuItem/menu-item';
 
-
 export const Menu = ({ menu }) => {
 
   return (
