@@ -17,12 +17,31 @@
 
 .reviewRating {
   align-items: flex-start;
-  justify-content: center;
+  max-width: 100px;
+}
+
+.input {
+  min-width: 250px;
+  min-height: 2em;
+  /* border: none; */
+}
+
+.textarea {
+  min-width: 250px;
+  min-height: 3em;
+  /* border: none; */
 }
 
 .clearButton {
-  min-width: 200px;
+  min-width: 100px;
   min-height: 2em;
-  background-color: #efefef;
-  border: none;
+  color: #ff0000;
+  border: 1px solid #000;
+}
+
+.submitButton {
+  min-width: 100px;
+  min-height: 2em;
+  /* background-color: #fff; */
+  border: 1px solid #000;
 }

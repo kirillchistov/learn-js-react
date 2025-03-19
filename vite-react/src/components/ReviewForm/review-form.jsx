@@ -8,7 +8,7 @@ export const ReviewForm = () => {
   const {
     name,
     text,
-    count,
+    rating,
     setRatingIncrement,
     setRatingDecrement,
     setName,
@@ -16,32 +16,50 @@ export const ReviewForm = () => {
     clearForm,
   } = useForm();
 
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    console.log('Form submitted')
+  };
+
+  // const handleFormChange = (e) => {
+  //   console.log('form data changed')
+  // };
+
+  // add labels and data tags to streamline form processing/validation
   return (
-    <div className={reviewFormStyle.container}>
-      <h4>Leave a review</h4>
-      <div><span>Name:</span></div>
-      <div>
-        <input
-          type='text'
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
+    <form onSubmit={handleFormSubmit}>
+      <div className={reviewFormStyle.container}>
+        <h4>Leave a review</h4>
+        <div><span>Name:</span></div>
+        <div>
+          <input
+            className={reviewFormStyle.input}
+            type='text'
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </div>
+        <div><span>Comment:</span></div>
+        <div>
+          <textarea
+            className={reviewFormStyle.textarea}
+            value={text} 
+            onChange={(e) => setText(e.target.value)} 
+          />
+        </div>
+        <div>Your rating:</div>
+        <div className={reviewFormStyle.reviewRating}>
+          <ReviewsCounter
+            increment={setRatingIncrement}
+            decrement={setRatingDecrement}
+            count={rating}
+          />
+        </div>
+        <div>
+          <button className={reviewFormStyle.clearButton} onClick={() => clearForm()}>Clear</button>
+          <button className={reviewFormStyle.submitButton} onClick={handleFormSubmit}>Submit</button>
+        </div>
       </div>
-      <div><span>Comment:</span></div>
-      <div>
-        <textarea value={text} onChange={(e) => setText(e.target.value)} />
-      </div>
-      <div>Your rating:</div>
-      <div className={reviewFormStyle.reviewRating}>
-        <ReviewsCounter
-          increment={setRatingIncrement}
-          decrement={setRatingDecrement}
-          count={count}
-        />
-      </div>
-      <div>
-        <button className={reviewFormStyle.clearButton} onClick={() => clearForm()}>clear</button>
-      </div>
-    </div>
+    </form>
   );
 };

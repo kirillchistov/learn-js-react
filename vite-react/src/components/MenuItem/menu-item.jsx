@@ -7,7 +7,7 @@ export const MenuItem = ({ item }) => {
       <div className={menuStyle.title}>
         {item.name}
       </div>
-      <div className={menuStyle.counter}>
+      <div>
         <Counter />
       </div>
     </div>

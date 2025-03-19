@@ -5,10 +5,11 @@ const DEFAULT_FORM_VALUE = {
   name: '',
   text: '',
   count: MIN_COUNT,
-  rating: 5,
+  rating: MIN_COUNT,
 //   nameError: '',
 };
 
+// Create object with action types
 const SET_NAME_ACTION = 'SET_NAME_ACTION';
 const SET_TEXT_ACTION = 'SET_TEXT_ACTION';
 // const SET_REVIEW_ACTION = 'SET_REVIEW_ACTION';
@@ -46,7 +47,7 @@ const reducer = (state, { type, payload }) => {
 export const useForm = () => {
   const [form, dispatch] = useReducer(reducer, DEFAULT_FORM_VALUE);
 
-  const { name, text, count } = form;
+  const { name, text, rating } = form;
 
   const setName = (name) => dispatch({ type: SET_NAME_ACTION, payload: name });
   const setText = (text) => dispatch({ type: SET_TEXT_ACTION, payload: text });
@@ -57,7 +58,7 @@ export const useForm = () => {
   return {
     name,
     text,
-    count,
+    rating,
     setRatingIncrement,
     setRatingDecrement,
     setName,
