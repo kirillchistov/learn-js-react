@@ -1,14 +1,7 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
+import { getScrollProgress } from './scroll-progress';
 import './progbar.module.css';
 
-const getScrollProgress = () => {
-  return (
-    (window.scrollY /
-      (document.documentElement.scrollHeight -
-        document.documentElement.clientHeight)) *
-    100
-  );
-};
 
 export const ProgressBar = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -27,5 +20,6 @@ export const ProgressBar = () => {
 
   return (
     <div className="progress-bar" style={{ width: `${scrollProgress}%` }}></div>
+    
   );
 };
