@@ -10,6 +10,17 @@ export const Restaurants = () => {
     <div>
       <RestaurantList restaurants={restaurants} onSetActiveRestaurant={setActiveRestaurant} activeRestaurant={activeRestaurant} />
       <Restaurant restaurant={activeRestaurant}></Restaurant>
+      <Restaurant restaurant={activeRestaurant}></Restaurant>
+      <Restaurant restaurant={activeRestaurant}></Restaurant>
+      <Restaurant restaurant={activeRestaurant}></Restaurant>
+      <Restaurant restaurant={activeRestaurant}></Restaurant>
+      <Restaurant restaurant={activeRestaurant}></Restaurant>
+      <Restaurant restaurant={activeRestaurant}></Restaurant>
+      <Restaurant restaurant={activeRestaurant}></Restaurant>
+      <Restaurant restaurant={activeRestaurant}></Restaurant>
+      <Restaurant restaurant={activeRestaurant}></Restaurant>
+      <Restaurant restaurant={activeRestaurant}></Restaurant>
+      <Restaurant restaurant={activeRestaurant}></Restaurant>
     </div>
   );
 };
