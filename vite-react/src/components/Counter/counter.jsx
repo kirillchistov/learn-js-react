@@ -1,8 +1,8 @@
-import { useCount } from './use-counter';
+import { useCounter } from './use-counter';
 import CounterStyle from './counter.module.css';
 
 export const Counter = () => {
-  const { value, increment, decrement } = useCount();
+  const { value, increment, decrement } = useCounter();
 
   return (
     <div className={CounterStyle.counter}>

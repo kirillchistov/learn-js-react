@@ -1,15 +1,18 @@
-// import { useState } from 'react';
+import { useCallback } from 'react';
 // import { Restaurant } from '../Restaurant/restaurant';
 import ListStyle from './restaurant-list.module.css';
-// TODO: Move function and button out
+
+// TODO: Move handler and button out
 export const RestaurantList = ({ restaurants, onSetActiveRestaurant, activeRestaurant}) => {
   
-  const handleActiveRestaurant = (restaurant) => {
-    if (activeRestaurant.id === restaurant.id) {
-      return;
-    }
-    onSetActiveRestaurant(restaurant);
-  };
+  const handleActiveRestaurant = useCallback ((id) => {
+    const openRestaurant = restaurants.find(
+      (restaurant) => restaurant.id === id
+    );
+    onSetActiveRestaurant(openRestaurant);
+    }, []
+  );
+
 
   return (
     <div className={ListStyle.restList}>

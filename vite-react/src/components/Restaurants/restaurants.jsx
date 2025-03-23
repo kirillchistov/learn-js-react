@@ -14,13 +14,6 @@ export const Restaurants = () => {
       <Restaurant restaurant={activeRestaurant}></Restaurant>
       <Restaurant restaurant={activeRestaurant}></Restaurant>
       <Restaurant restaurant={activeRestaurant}></Restaurant>
-      <Restaurant restaurant={activeRestaurant}></Restaurant>
-      <Restaurant restaurant={activeRestaurant}></Restaurant>
-      <Restaurant restaurant={activeRestaurant}></Restaurant>
-      <Restaurant restaurant={activeRestaurant}></Restaurant>
-      <Restaurant restaurant={activeRestaurant}></Restaurant>
-      <Restaurant restaurant={activeRestaurant}></Restaurant>
-      <Restaurant restaurant={activeRestaurant}></Restaurant>
     </div>
   );
 };
