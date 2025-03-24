@@ -1,4 +1,4 @@
-import { useCounter } from './use-counter';
+import { useCounter } from '../../hooks/use-counter';
 import CounterStyle from './counter.module.css';
 
 export const Counter = () => {

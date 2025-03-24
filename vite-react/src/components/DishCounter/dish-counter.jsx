@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { Counter } from "../Counter/counter";
+import { Counter } from '../Counter/counter';
 
 export const DishCounter = () => {
   const [dishCount, setDishCount] = useState(0);

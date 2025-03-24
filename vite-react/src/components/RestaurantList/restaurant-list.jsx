@@ -1,5 +1,3 @@
-// import { useCallback } from 'react';
-// import { Restaurant } from '../Restaurant/restaurant';
 import ListStyle from './restaurant-list.module.css';
 
 export const RestaurantList = ({ restaurants, onSetActiveRestaurant, activeRestaurant}) => {

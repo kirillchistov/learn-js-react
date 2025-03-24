@@ -1,4 +1,4 @@
-import { Counter } from '../Counter/counter';
+import { DishCounter } from '../DishCounter/dish-counter';
 import menuStyle from './menu-item.module.css';
 
 export const MenuItem = ({ item }) => {
@@ -8,7 +8,7 @@ export const MenuItem = ({ item }) => {
         {item.name}
       </div>
       <div>
-        <Counter />
+        <DishCounter />
       </div>
     </div>
   );
