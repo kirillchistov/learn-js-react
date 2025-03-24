@@ -1,7 +1,5 @@
-//  import { useReducer } from 'react';
-import { ReviewsCounter } from '../Counter/counter-reviews';
+import { Counter } from '../Counter/counter';
 import { useForm } from '../../hooks/use-form';
-// import { MIN_COUNT, MAX_COUNT } from '../../constants/config';
 import reviewFormStyle from './review-form.module.css';
 
 export const ReviewForm = () => {
@@ -20,10 +18,6 @@ export const ReviewForm = () => {
     e.preventDefault();
     console.log('Form submitted')
   };
-
-  // const handleFormChange = (e) => {
-  //   console.log('form data changed')
-  // };
 
   // add labels and data tags to streamline form processing/validation
   return (
@@ -49,10 +43,10 @@ export const ReviewForm = () => {
         </div>
         <div>Your rating:</div>
         <div className={reviewFormStyle.reviewRating}>
-          <ReviewsCounter
+          <Counter
             increment={setRatingIncrement}
             decrement={setRatingDecrement}
-            count={rating}
+            value={rating}
           />
         </div>
         <div>

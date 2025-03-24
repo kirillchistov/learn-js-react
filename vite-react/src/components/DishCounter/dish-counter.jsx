@@ -1,15 +1,8 @@
-import React, { useState, useCallback } from 'react';
 import { Counter } from '../Counter/counter';
+import { useCounter } from '../../hooks/use-counter';
 
 export const DishCounter = () => {
-  const [dishCount, setDishCount] = useState(0);
+  const { value, increment, decrement } = useCounter();
 
-  const handleDishCount = useCallback((newValue) => {
-    setDishCount(Number(newValue));
-  }, []);
-  return (
-    <div>
-      <Counter value={dishCount} onChange={handleDishCount} />
-    </div>
-  );
+  return <Counter value={value} increment={increment} decrement={decrement} />;
 };

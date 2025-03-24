@@ -1,4 +1,3 @@
-// import { useState, useCallback } from 'react';
 import { useState } from 'react';
 import { MIN_COUNT, MAX_COUNT } from '../constants/config';
 
