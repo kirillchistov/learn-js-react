@@ -6,12 +6,12 @@ export const useCounter = () => {
 
   const decrement = useCallback(
     () => setCount((prevCount) => Math.min(prevCount - 1, MIN_COUNT)),
-    [MIN_COUNT]
+    []
   );
 
   const increment = useCallback(
     () => setCount((prevCount) => Math.min(prevCount + 1, MAX_COUNT)),
-    [MAX_COUNT]
+    []
   );
 
 

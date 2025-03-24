@@ -1,7 +1,5 @@
 import { useReducer, useCallback } from 'react';
 import { 
-  // MIN_COUNT, 
-  // MAX_COUNT,
   DEFAULT_FORM_VALUE,
   SET_NAME_ACTION,
   SET_TEXT_ACTION,
