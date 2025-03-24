@@ -7,13 +7,13 @@ import HeaderStyle from './header.module.css';
 
 const Header = () => {
   return (
-    <header className={HeaderStyle.header}>
+    <header>
       <div>
-        <nav>
+        <nav className={HeaderStyle.header}>
           <a href='/'>Home</a>
-        </nav>
-        <ToggleThemeButton />
-        <AuthButton />
+          <ToggleThemeButton />
+          <AuthButton />
+        </nav>       
       </div>
     </header>
   );
