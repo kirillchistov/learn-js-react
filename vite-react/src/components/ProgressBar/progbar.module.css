@@ -1,0 +1,11 @@
+.progressBar {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  position: fixed;
+  background-color: #fff;
+  background-color: #4409f5;
+  transition: width 0.2s ease;
+  /* border: 1px solid #eee; */
+}
