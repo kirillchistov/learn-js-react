@@ -8,7 +8,6 @@ const getScrollProgress = () => {
   );
 };
 
-// add scroll listener and call onScroll at mount, remove listener on unmount
 export const useProgress = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
 

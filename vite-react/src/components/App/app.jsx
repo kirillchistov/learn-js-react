@@ -1,7 +1,6 @@
 import { Layout } from '../Layout/layout';
 import { Restaurants } from '../Restaurants/restaurants';
 import './app.module.css';
-// import { ThemeContext } from '../../theme-context/theme-context';
 import { ThemeContextProvider } from '../../theme-context/theme-context';
 import { AuthContextProvider } from '../../auth-context/auth-context';
 

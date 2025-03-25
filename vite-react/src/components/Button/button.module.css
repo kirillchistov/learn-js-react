@@ -8,19 +8,22 @@
 }
 
 .size500 {
-  font-size: 18px;
-  padding: 6px 12px;
+  font-size: 16px;
+  padding: 8px 14px;
 }
 
 .size400 {
-    font-size: 16px;
-    padding: 3px 6px;
+  font-size: 14px;
+  padding: 6px 12px;
 }
 
 .light {
-    background-color: rgb(204, 133, 245);
+  background-color: #f5ee79;
+  color: #6938EF;
 }
 
 .dark {
-    background-color: rgb(56, 5, 145);
+  background-color: #09011f;
+  color: #f5ee79;
+
 }
