@@ -2,7 +2,12 @@
   display: flex;
   padding: 0.7em;
   min-height: 1em;
-  align-items: flex-start;
-  justify-content: left;
+  align-items: center;
+  align-content: space-evenly;
+  justify-content: space-between;
   border: 1px dashed #efefef;
 };
+
+ul li {
+  display: inline;
+}

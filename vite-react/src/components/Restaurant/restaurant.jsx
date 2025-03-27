@@ -23,9 +23,7 @@ export const Restaurant = ({ restaurant }) => {
         ) : (
           "No reviews yet"
         )}
-      
-
-      
+            
       </div>
   );
 };
