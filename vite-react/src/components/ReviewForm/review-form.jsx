@@ -19,7 +19,6 @@ export const ReviewForm = () => {
     console.log('Form submitted')
   };
 
-  // add labels and data tags to streamline form processing/validation
   return (
     <form onSubmit={handleFormSubmit}>
       <div className={reviewFormStyle.container}>

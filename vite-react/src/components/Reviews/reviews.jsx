@@ -1,7 +1,12 @@
+import { use } from 'react';
+import { AuthContext } from '../../auth-context';
 import { Review } from '../Review/review';
 import { ReviewForm } from '../ReviewForm/review-form'
 
 export const Reviews = ({ reviews }) => {
+  const { auth } = use(AuthContext);
+  const { isAuthorized } = auth;
+
   return (
     <div>
       <h3>Reviews</h3>
@@ -12,7 +17,9 @@ export const Reviews = ({ reviews }) => {
           </li>
         ))}
       </ul>
-      <ReviewForm/>
+      {isAuthorized && (
+        <ReviewForm/>
+      )}        
     </div>
   );
 };
