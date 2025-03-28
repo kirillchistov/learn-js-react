@@ -18,9 +18,7 @@ export const MenuItem = ({ item }) => {
       </div>
       <div>
         {isAuthorized && (
-          <>
-            <DishCounter />
-          </>
+          <DishCounter />
         )}
       </div>
     </div>

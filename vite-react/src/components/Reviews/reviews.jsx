@@ -18,9 +18,7 @@ export const Reviews = ({ reviews }) => {
         ))}
       </ul>
       {isAuthorized && (
-        <>
-          <ReviewForm/>
-        </>
+        <ReviewForm/>
       )}        
     </div>
   );
