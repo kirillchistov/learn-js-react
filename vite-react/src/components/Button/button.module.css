@@ -7,15 +7,34 @@
   }
 }
 
+/* getting obsolete now  */
 .size500 {
   font-size: 16px;
   padding: 8px 14px;
 }
 
+/* getting obsolete now  */
 .size400 {
   font-size: 14px;
   padding: 6px 12px;
 }
+
+/* replace fixed color rules with style variables  */
+.active {
+  background-color: #09011f;
+  color: #f5ee79;
+}
+
+.light.default {
+  background-color: #f5ee79;
+  color: #6938EF;
+}
+
+.dark.default {
+  background-color: #75755986;
+  color: #f5ee79;
+}
+
 
 .light {
   background-color: #f5ee79;
@@ -26,4 +45,15 @@
   background-color: #09011f;
   color: #f5ee79;
 
+}
+
+.tabButton {
+  background-color: transparent;
+  border: none;
+}
+
+.themeToggle {
+  display: inline-block;
+  padding: 5px;
+  border-radius: 8px;
 }

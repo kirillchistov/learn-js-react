@@ -2,14 +2,14 @@ import React from 'react';
 import { AuthButton } from '../AuthButton/auth-button';
 import { ToggleThemeButton } from '../ToggleThemeButton/toggle-theme-button';
 
-import HeaderStyle from './header.module.css';
+import styles from './header.module.css';
 
 
 const Header = () => {
   return (
     <header>
       <div>
-        <nav className={HeaderStyle.header}>
+        <nav className={styles.header}>
           <a href='/'>Home</a>
           <ToggleThemeButton />
           <AuthButton />

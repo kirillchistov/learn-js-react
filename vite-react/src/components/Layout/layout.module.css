@@ -3,3 +3,16 @@
   min-height: 100vh;
   grid-template-rows: auto 1fr auto;
 };
+
+
+.root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  display: flex;
+  flex: 1 0 auto;
+  padding: 32px 16px;
+}

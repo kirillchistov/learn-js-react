@@ -1,19 +1,20 @@
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { selectRestaurantIds } from '../../redux/entities/restaurant/slice';
 import { RestaurantList } from '../RestaurantList/restaurant-list';
 import { Restaurant } from '../Restaurant/restaurant';
 
-import { restaurants } from '../../constants/mock';
+// import { restaurants } from '../../constants/mock';
 
 export const Restaurants = () => {
-  const [activeRestaurant, setActiveRestaurant] = useState(restaurants[0]);
+  const restaurantIds = useSelector(selectRestaurantIds);
+  const [activeRestaurantId, setActiveRestaurantId] = useState(restaurantIds[0]);
   return (
     <div>
-      <RestaurantList restaurants={restaurants} onSetActiveRestaurant={setActiveRestaurant} activeRestaurant={activeRestaurant} />
-      <Restaurant restaurant={activeRestaurant}></Restaurant>
-      <Restaurant restaurant={activeRestaurant}></Restaurant>
-      <Restaurant restaurant={activeRestaurant}></Restaurant>
-      <Restaurant restaurant={activeRestaurant}></Restaurant>
-      <Restaurant restaurant={activeRestaurant}></Restaurant>
+      <RestaurantList restaurantIds={restaurantIds} onSetActiveRestaurantId={setActiveRestaurantId} activeRestaurantId={activeRestaurantId} />
+      {activeRestaurantId && (
+        <Restaurant id={activeRestaurantId} />
+      )}
     </div>
   );
 };

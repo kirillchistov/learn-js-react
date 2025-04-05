@@ -1,27 +1,43 @@
-import ListStyle from './restaurant-list.module.css';
+// import styles from './restaurant-list.module.css';
 
-export const RestaurantList = ({ restaurants, onSetActiveRestaurant, activeRestaurant}) => {
+// export const RestaurantList = ({ restaurantIds, onSetActiveRestaurantId, activeRestaurantId}) => {
   
-  const handleActiveRestaurant = (restaurant) => {
-    if (activeRestaurant.id === restaurant.id) {
-      return;
-    }
-    onSetActiveRestaurant(restaurant);
-  };
+//   const handleActiveRestaurant = (restaurant) => {
+//     if (activeRestaurantId === restaurant.id) {
+//       return;
+//     }
+//     onSetActiveRestaurantId(restaurant.id);
+//   };
 
-  return (
-    <div className={ListStyle.restList}>
-      {restaurants.map((restaurant) => (
-        <button
-          key={restaurant.id}
-          onClick={() => {
-            handleActiveRestaurant(restaurant);
-          }}
-          disabled={activeRestaurant.id === restaurant.id}
-        >
-          <h3 className={ListStyle.restHeading}>{restaurant.name}</h3>
-        </button>
-      ))}
-    </div>
-  );
+//   return (
+//     <div className={styles.restList}>
+//       {restaurantIds.map((restaurantId) => (
+//         <button
+//           key={restaurantId}
+//           onClick={() => {
+//             handleActiveRestaurant(restaurantId);
+//           }}
+//           disabled={activeRestaurantId === restaurantId}
+//         >
+//           <h3 className={styles.restHeading}>{restaurant.name}</h3>
+//         </button>
+//       ))}
+//     </div>
+//   );
+// };
+
+import { useSelector } from 'react-redux';
+import { selectRestaurantById } from '../../redux/entities/restaurant';
+import { Restaurant } from './restaurant';
+
+export const RestaurantContainer = ({ id }) => {
+  const restaurant = useSelector((state) => selectRestaurantById(state, id));
+
+  if (!restaurant) {
+    return null;
+  }
+
+  const { name, menu, reviews } = restaurant;
+
+  return <Restaurant name={name} reviewsIds={reviews} menuIds={menu} id={id} />;
 };
