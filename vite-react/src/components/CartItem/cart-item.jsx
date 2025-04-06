@@ -1,7 +1,10 @@
-export const CartItem = ({ name, amount }) => {
+import { DishCounter } from '../DishCounter/dish-counter';
+import styles from './cart-item.module.css';
+
+export const CartItem = ({ name, id }) => {
   return (
-    <>
-      {name} - {amount} шт.
-    </>
+    <div className={styles.container}>
+      {name}:  <DishCounter id={id}/>
+    </div>
   );
 };

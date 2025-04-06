@@ -1,18 +1,19 @@
-import { useSelector } from 'react-redux';
-import { selectCartItems } from '../../redux/entities/cart/slice';
 import { ItemContainer } from '../CartItem/item-container';
+import styles from './cart.module.css';
 
-export const Cart = () => {
-  const items = useSelector(selectCartItems);
+export const Cart = ({ itemIds} ) => {
 
-  if (!items.length) {
+  if (!itemIds.length) {
+    console.log('Nothing to show');
     return null;
   }
 
   return (
-    <ul>
-      {items.map((cartItem) => (
-        <ItemContainer key={cartItem.id} item={cartItem} />
+    <ul className={styles.container}>
+      {itemIds.map((id) => (
+        <li key={id}>
+          <ItemContainer key={id} id={id} />
+        </li>
       ))}
     </ul>
   );

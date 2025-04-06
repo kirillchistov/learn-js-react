@@ -5,18 +5,19 @@ export const TabItem = ({
   title,
   onClick,
   isActive,
-  colorViewVariant,
-  viewVariant,
+  // colorViewVariant,
+  // viewVariant,
 }) => {
   return (
     <Button
       className={styles.tab}
       onClick={onClick}
       disabled={isActive}
-      colorViewVariant={colorViewVariant}
-      viewVariant={viewVariant}
+      title={title}
+      // colorViewVariant={colorViewVariant}
+      // viewVariant={viewVariant}
     >
-      <h3>{title}</h3>
+      <h2>{title}</h2>
     </Button>
   );
 };

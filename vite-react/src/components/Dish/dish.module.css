@@ -9,6 +9,12 @@
   border: none;
 };
 
+.dish {
+  max-width: 80vw;
+  padding: 0.5em;
+
+}
+
 .title {
   color: #000;
 }

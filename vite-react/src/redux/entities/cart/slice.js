@@ -7,31 +7,37 @@ export const cartSlice = createSlice({
     addToCart: (state, { payload }) => {
       state[payload] = (state[payload] || 0) + 1;
     },
-
     removeFromCart: (state, { payload }) => {
       if (!state[payload]) {
         return state;
       }
 
-      state[payload] -= 1;
+      state[payload] = state[payload] - 1;
 
-      if (state[payload] === 0) {
+      if (state[payload] <= 0) {
         delete state[payload];
       }
     },
   },
-  selectors: {
-    selectCartItems: (state) => {
-      return Object.keys(state).reduce((acc, id) => {
-        acc.push({ id, amount: state[id] });
 
+
+  selectors: {
+    selectCartItems: (state) =>
+      Object.keys(state).reduce((acc, id) => {
+        acc.push({ id, amount: state[id] });
         return acc;
-      }, []);
-    },
-    selectCartItemAmountById: (state, id) => state[id],
+      }, []),
+
+    selectCartItemIds: (state) => Object.keys(state),
+
+    selectAmountByItemId: (state, id) => state[id],
   },
 });
 
-export const { selectCartItems, selectCartItemAmountById } =
-  cartSlice.selectors;
+export const { 
+  selectCartItems, 
+  selectCartItemIds, 
+  selectAmountByItemId 
+} = cartSlice.selectors;
+
 export const { addToCart, removeFromCart } = cartSlice.actions;

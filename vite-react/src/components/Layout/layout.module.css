@@ -1,18 +1,16 @@
 .layout {
   display: grid;
+  min-width: 80vw;
   min-height: 100vh;
   grid-template-rows: auto 1fr auto;
 };
 
-
-.root {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
 .main {
   display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content:space-evenly;
+  align-content: center;
   flex: 1 0 auto;
   padding: 32px 16px;
 }

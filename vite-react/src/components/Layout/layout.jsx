@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../Header/header';
 import Footer from '../Footer/footer';
-import { Cart } from '../Cart/cart';
+import { CartContainer } from '../Cart/cart-container';
 import { ProgressBar } from '../ProgressBar/progress-bar';
 import styles from './layout.module.css';
 
@@ -14,7 +14,7 @@ export const Layout = ({ title, children }) => {
         <h1>{title}</h1>
         <section>{children}</section>
       </main>
-      <Cart />
+      <CartContainer />
       <Footer />
     </div>
   );

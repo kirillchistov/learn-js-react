@@ -16,8 +16,6 @@ export const RestaurantTabContainer = ({ id, onClick, isActive }) => {
       title={name}
       onClick={onClick}
       isActive={isActive}
-      colorViewVariant='default'
-      viewVariant='restaurantTab'
     />
   );
 };

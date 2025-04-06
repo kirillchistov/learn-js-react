@@ -3,7 +3,7 @@
     margin-top: 1em;
     margin-bottom: 1em;
     padding: 10px;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 0.5em;
     border: 1px dashed #efefef;
 }

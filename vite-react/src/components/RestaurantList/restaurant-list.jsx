@@ -30,7 +30,7 @@ import { useSelector } from 'react-redux';
 import { selectRestaurantById } from '../../redux/entities/restaurant';
 import { Restaurant } from './restaurant';
 
-export const RestaurantContainer = ({ id }) => {
+export const RestaurantList = ({ id }) => {
   const restaurant = useSelector((state) => selectRestaurantById(state, id));
 
   if (!restaurant) {

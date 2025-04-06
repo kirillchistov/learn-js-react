@@ -4,12 +4,10 @@ import { use } from 'react';
 import { ThemeContext } from '../../theme-context';
 
 export const Button = ({
-  children,
+  title,
   onClick,
   disabled,
-  colorViewVariant = 'default',
-  viewVariant = 'default',
-  // size = '500',
+  size = '500',
   className,
 }) => {
   const { theme } = use(ThemeContext);
@@ -17,18 +15,15 @@ export const Button = ({
   return (
     <button
       className={classNames(styles.root, className, {
-        // [styles.size500]: size === '500',
-        // [styles.size400]: size === '400',
-        [styles.default]: colorViewVariant === 'default',
-        [styles.active]: colorViewVariant === 'active',
-        [styles.themeToggle]: viewVariant === 'themeToggle',
+        [styles.size500]: size === '500',
+        [styles.size400]: size === '400',
         [styles.dark]: theme === 'dark',
         [styles.light]: theme === 'light',
       })}
       disabled={disabled}
       onClick={onClick}
     >
-      {children}
+      {title}
     </button>
   );
 };
