@@ -5,8 +5,6 @@ export const TabItem = ({
   title,
   onClick,
   isActive,
-  // colorViewVariant,
-  // viewVariant,
 }) => {
   return (
     <div className={isActive ? styles.tabactive : styles.tab}>

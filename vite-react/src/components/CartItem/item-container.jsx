@@ -1,6 +1,5 @@
 import { useSelector } from 'react-redux';
 import { selectDishById } from '../../redux/entities/dish/slice';
-// import { selectCartItemAmountById } from '../../redux/entities/cart/slice';
 
 import { CartItem } from './cart-item';
 

@@ -1,4 +1,4 @@
-import { selectReviewById } from '../../redux/entities/reviews/slice';
+import { selectReviewById } from '../../redux/entities/review/slice';
 import { Review } from '../Review/review';
 import { useSelector } from "react-redux";
 

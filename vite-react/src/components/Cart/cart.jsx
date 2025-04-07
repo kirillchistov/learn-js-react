@@ -9,12 +9,15 @@ export const Cart = ({ itemIds} ) => {
   }
 
   return (
-    <ul className={styles.container}>
-      {itemIds.map((id) => (
-        <li key={id}>
-          <ItemContainer key={id} id={id} />
-        </li>
-      ))}
-    </ul>
+    <div className={styles.container}>
+      <h4>Your cart</h4>
+      <ul>
+        {itemIds.map((id) => (
+          <li key={id}>
+            <ItemContainer key={id} id={id} />
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
