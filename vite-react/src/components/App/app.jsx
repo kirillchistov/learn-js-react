@@ -1,5 +1,4 @@
 import { Layout } from '../Layout/layout';
-// import { Restaurants } from '../Restaurants/restaurants';
 import { RestaurantsPage } from '../RestaurantsPage/restaurants-page';
 import { ThemeContextProvider } from '../../theme-context/theme-context';
 import { AuthContextProvider } from '../../auth-context/auth-context';

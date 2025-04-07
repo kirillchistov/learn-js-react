@@ -32,7 +32,7 @@ export const ReviewForm = () => {
             onChange={(e) => setName(e.target.value)}
           />
         </div>
-        <div><span>Comment:</span></div>
+        <div>Comment:</div>
         <div>
           <textarea
             className={styles.textarea}
@@ -49,7 +49,7 @@ export const ReviewForm = () => {
           />
         </div>
         <div>
-          <button className={styles.clearButton} onClick={() => clearForm()}>Clear</button>
+          <button className={styles.clearButton} onClick={clearForm}>Clear</button>
           <button className={styles.submitButton} onClick={handleFormSubmit}>Submit</button>
         </div>
       </div>

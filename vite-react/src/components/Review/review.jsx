@@ -1,7 +1,3 @@
 export const Review = ({ text }) => {
-  return (
-  <>
-    <i>{text}</i>
-  </>
-  );
+  return (<i>{text}</i>);
 };
