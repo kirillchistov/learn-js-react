@@ -1,14 +1,14 @@
-import {MenuItem} from '../MenuItem/menu-item';
+import {DishContainer} from '../Dish/dish-container';
 
-export const Menu = ({ menu }) => {
+export const Menu = ({ menuIds }) => {
 
   return (
     <>
       <h3>Menu</h3>
         <ul>
-          {menu.map((item) => (
-            <li key={item.id}>
-              <MenuItem item={item} />
+          {menuIds.map((id) => (
+            <li key={id}>
+              <DishContainer id={id} />
             </li>
           ))}
         </ul>

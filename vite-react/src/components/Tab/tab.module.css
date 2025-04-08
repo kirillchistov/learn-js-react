@@ -6,6 +6,17 @@
   background-color: #ddd;
 };
 
+.tab {
+  min-width: 150px;
+  margin-right: 10px;
+}
+
+.tabactive {
+  border-bottom: 1px solid #ddd;
+  min-width: 150px;
+  margin-right: 10px;
+}
+
 .button {
   background-color: transparent;
   border: none;
