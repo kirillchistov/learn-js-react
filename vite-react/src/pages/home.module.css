@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  width: 90vw;
+  min-height: 100px;
+  margin-top: 1em;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed #efefef;
+  border-radius: 15px;
+};
+
+.heroImage {
+width: 90vw;
+padding-bottom: 40px;
+}
