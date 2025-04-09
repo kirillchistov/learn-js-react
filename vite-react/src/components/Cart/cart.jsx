@@ -14,7 +14,7 @@ export const Cart = ({ itemIds} ) => {
       <ul>
         {itemIds.map((id) => (
           <li key={id}>
-            <ItemContainer key={id} id={id} />
+            <ItemContainer id={id} />
           </li>
         ))}
       </ul>

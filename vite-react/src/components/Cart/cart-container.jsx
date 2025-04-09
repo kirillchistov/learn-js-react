@@ -6,7 +6,6 @@ export const CartContainer = () => {
   const itemIds = useSelector(selectCartItemIds);
 
   if (!itemIds.length) {
-    console.log('nothing to show here');
     return null;
   }
   return <Cart itemIds={itemIds} />;
