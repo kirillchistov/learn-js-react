@@ -9,7 +9,7 @@ import { ReviewPage } from '../../pages/review-page';
 import { ThemeContextProvider } from '../../theme-context/theme-context';
 import { AuthContextProvider } from '../../auth-context/auth-context';
 import { Provider } from 'react-redux';
-import { BrowserRouter, Routes, Route, Outlet, Navigate } from 'react-router';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router';
 import { store } from '../../redux/store';
 import './app.module.css';
 

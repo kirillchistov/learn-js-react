@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { selectRestaurantIds } from '../../redux/entities/restaurant/slice';
 import { RestaurantContainer } from '../Restaurant/restaurant-container';
 import { RestaurantTabContainer } from '../RestaurantList/restaurant-tab-container';
+import { Outlet } from 'react-router';
 import styles from './restaurants-page.module.css';
 
 export const RestaurantsPage = () => {
@@ -34,9 +35,10 @@ export const RestaurantsPage = () => {
           />
         ))}
       </div>
-      <div>
+      <Outlet />
+      {/* <div>
         <RestaurantContainer key={activeRestaurantId} id={activeRestaurantId} />
-      </div>
+      </div> */}
     </div>
   );
 };

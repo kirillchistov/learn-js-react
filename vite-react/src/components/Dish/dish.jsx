@@ -4,7 +4,7 @@ import { use } from 'react';
 
 import styles from './dish.module.css';
 
-export const Dish = ({ name, id }) => {
+export const Dish = ({ name, id, price, contents }) => {
   const { auth } = use(AuthContext);
   const { isAuthorized } = auth;
 
@@ -15,8 +15,10 @@ export const Dish = ({ name, id }) => {
   return (
     <div className={styles.container}>
       <div className={styles.dish}>
-        {name}
+        <span>{name}</span>
+        <span>price: {price}</span>
       </div>
+      <div className={styles.container}>contents: {contents}</div>
       {isAuthorized && (<DishCounter id={id} />)}
     </div>
   );

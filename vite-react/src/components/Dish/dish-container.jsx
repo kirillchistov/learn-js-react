@@ -5,9 +5,9 @@ import { Dish } from './dish';
 export const DishContainer = ({ id }) => {
   const dish = useSelector((state) => selectDishById(state, id));
 
-  const { name } = dish || {};
+  const { name, price, contents } = dish || {};
 
   return (
-    <Dish name={name} id={id} />
+    <Dish name={name} price={price} contents={contents} id={id} />
   );
 };

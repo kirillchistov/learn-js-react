@@ -10,7 +10,7 @@ export const MenuContainer = ({ restaurantId }) => {
   if (!restaurant) {
     return null;
   }
-  const { name, menu } = restaurant;
+  const { menu, name } = restaurant;
 
-  return <Menu name={name} menuIds={menu} />;
+  return <Menu menuIds={menu} name={name} />;
 };
