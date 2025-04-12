@@ -7,3 +7,9 @@
 .heading {
   color: green;
 }
+
+.tabContainer {
+  display: flex;
+  gap: 1em;
+  padding: 1em;
+}

@@ -20,8 +20,8 @@ export const DishTabContainer = ({ id }) => {
 
   return (
     <div className={styles.container}>
-      <DishTab name={name} id={id} />
-      {isAuthorized && (<DishCounter id={id} />)}
+      <div><DishTab name={name} id={id} /></div>
+      {isAuthorized && (<div><DishCounter id={id} /></div>)}
     </div>
   );
 };

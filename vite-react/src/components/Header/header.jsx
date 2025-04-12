@@ -11,6 +11,7 @@ const Header = () => {
       <div>
         <nav className={styles.header}>
           <a href='/'>Home</a>
+          <a href='/restaurants'>Restauarants</a>
           <ToggleThemeButton />
           <AuthButton />
         </nav>       

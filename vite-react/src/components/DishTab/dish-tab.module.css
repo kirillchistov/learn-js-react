@@ -1,11 +1,11 @@
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
 }
 
 .dishTitle {
-  padding: 8px 0;
+  padding: 4px 0;
 }

@@ -6,7 +6,7 @@ export const Modal = ({ children }) => {
 
   return (
     <>
-      <button onClick={() => setIsVisible(!isVisible)}>toggle modal</button>
+      <button onClick={() => setIsVisible(!isVisible)}>Toggle Modal</button>
       {isVisible &&
         createPortal(<div>{children}</div>, document.getElementById('modal'))}
     </>

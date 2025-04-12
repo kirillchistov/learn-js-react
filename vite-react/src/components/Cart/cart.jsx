@@ -9,8 +9,8 @@ export const Cart = ({ itemIds} ) => {
   }
 
   return (
-    <div className={styles.container}>
-      <h4>Your cart</h4>
+    <>
+      <h3>Your cart</h3>
       <ul>
         {itemIds.map((id) => (
           <li key={id}>
@@ -18,6 +18,6 @@ export const Cart = ({ itemIds} ) => {
           </li>
         ))}
       </ul>
-    </div>
+    </>
   );
 };
