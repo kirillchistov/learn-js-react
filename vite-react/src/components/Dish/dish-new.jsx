@@ -4,7 +4,7 @@ import { use } from 'react';
 
 import styles from './dish.module.css';
 
-export const Dish = ({ name, id }) => {
+export const Dish = ({ name, id, price, contents }) => {
   const { auth } = use(AuthContext);
   const { isAuthorized } = auth;
 
@@ -13,11 +13,15 @@ export const Dish = ({ name, id }) => {
   }  
 
   return (
-    <div className={styles.container}>
-      <div className={styles.dish}>
-        {name}
+    <div className={styles.dish}>
+      <div className={styles.container}>
+        <h3>{name}</h3>
+        <div>{isAuthorized && (<DishCounter id={id} />)}</div>
       </div>
-      {isAuthorized && (<DishCounter id={id} />)}
+      <ul>
+        <li>price: {price}</li>
+        <li>contents: {contents}</li>
+      </ul>
     </div>
   );
 };

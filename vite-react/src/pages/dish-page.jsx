@@ -1,5 +1,5 @@
 import { useParams } from 'react-router';
-import { DishContainer } from '../components/Dish/dish-container';
+import { DishContainer } from '../components/Dish/dish-container-new';
 
 export const DishPage = () => {
   const { dishId } = useParams();
