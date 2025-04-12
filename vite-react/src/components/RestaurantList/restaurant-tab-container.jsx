@@ -15,9 +15,5 @@ export const RestaurantTabContainer = ({ id, isActive }) => {
     <TabNav to={id} isActive={isActive} title={name}>
       {({ isActive }) => (isActive ? name : name)}   
     </TabNav>
-    //   title={name}
-    //   onClick={onClick}
-    //   isActive={isActive}
-    // />
   );
 };

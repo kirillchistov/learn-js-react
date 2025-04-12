@@ -12,7 +12,6 @@ export const DishTabContainer = ({ id }) => {
   const { auth } = use(AuthContext);
   const { isAuthorized } = auth;
 
-
   if (!dish) {
     return null;
   }

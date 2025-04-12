@@ -1,14 +1,3 @@
-/* .container {
-  display: flex;
-  width: 100%;
-  padding: 0.5em;
-  min-height: 0.7em;
-  align-items: center;
-  align-content: center;
-  justify-content: left;
-  border: none;
-}; */
-
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
