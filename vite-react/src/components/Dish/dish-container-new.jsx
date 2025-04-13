@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { selectDishById } from '../../redux/entities/dish/slice';
-import { Dish } from './dish';
+import { Dish } from './dish-new';
 
 export const DishContainer = ({ id }) => {
   const dish = useSelector((state) => selectDishById(state, id));

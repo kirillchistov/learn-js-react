@@ -29,9 +29,7 @@ export const App = () => {
                     <Route path='reviews' element={<ReviewPage />} />
                   </Route>
                 </Route> 
-                <Route path='/dish' element={<DishPage />}>
-                  <Route path=':dishId' element={<DishPage />}></Route>
-                </Route>
+                <Route path='/dish/:dishId' element={<DishPage />}></Route>
                 <Route path='*' element={<div>Page not found</div>} />
               </Route>
               <Route path='*' element={<Navigate to='/' />} />
