@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { entityAdapter } from '../restaurants/slice';
+import { entityAdapter } from '../restaurant/slice';
 // import { normalizedReviews } from '../../../constants/normalized-mock';
 import { getReviews } from './get-reviews';
 import { getReview } from './get-review';

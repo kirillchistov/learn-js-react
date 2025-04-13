@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { entityAdapter } from '../restaurants/slice';
+import { entityAdapter } from '../restaurant/slice';
 import { getDishes } from './get-dishes';
 import { getDish } from './get-dish';
 

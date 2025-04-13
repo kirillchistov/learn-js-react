@@ -6,8 +6,8 @@ import { cartSlice } from './entities/cart/slice';
 import { userSlice } from './entities/user/slice';
 import { requestSlice } from './entities/request/slice';
 
-// const loggerMiddleware = (store) => (next) => (action) => {
-const loggerMiddleware = () => (next) => (action) => {
+const loggerMiddleware = (store) => (next) => (action) => {
+// const loggerMiddleware = () => (next) => (action) => {
   console.log(action);
   return next(action)
 }

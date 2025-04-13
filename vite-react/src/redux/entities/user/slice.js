@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 // import { normalizedUsers } from '../../../constants/normalized-mock';
 import { getUsers } from './get-users';
-import { entityAdapter } from '../restaurants/slice';
+import { entityAdapter } from '../restaurant/slice';
 
 export const userSlice = createSlice({
   name: 'userSlice',
