@@ -1,6 +1,5 @@
 import { use } from 'react';
 import { AuthContext } from '../../auth-context';
-import { Review } from '../Review/review';
 import { ReviewContainer } from '../Review/review-container';
 import { ReviewForm } from '../ReviewForm/review-form'
 

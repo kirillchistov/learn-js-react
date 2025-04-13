@@ -1,7 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createSelector } from '@reduxjs/toolkit';
 
 export const cartSlice = createSlice({
-  name: 'cartSlice',
+  name: 'cart',
   initialState: {},
   reducers: {
     addToCart: (state, { payload }) => {
@@ -19,25 +19,19 @@ export const cartSlice = createSlice({
       }
     },
   },
-
-
   selectors: {
-    selectCartItems: (state) =>
-      Object.keys(state).reduce((acc, id) => {
-        acc.push({ id, amount: state[id] });
-        return acc;
-      }, []),
-
-    selectCartItemIds: (state) => Object.keys(state),
-
     selectAmountByItemId: (state, id) => state[id],
   },
 });
 
-export const { 
-  selectCartItems, 
-  selectCartItemIds, 
-  selectAmountByItemId 
-} = cartSlice.selectors;
-
+export const { selectCartItems, selectAmountByItemId } =
+  cartSlice.selectors;
 export const { addToCart, removeFromCart } = cartSlice.actions;
+
+
+const selectCartSlice = (state) => state.cart;
+
+
+export const selectCartItemIds = createSelector([selectCartSlice], (cart) => 
+    Object.keys(cart)
+);

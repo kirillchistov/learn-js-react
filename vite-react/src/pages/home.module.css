@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+  width: 90vw;
+  min-height: 100px;
+  margin-top: 1em;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed #efefef;
+  border-radius: 15px;
+};
+
+.heroImage {
+  width: 90vw;
+  padding-bottom: 40px;
+}
+
+.modalOverlay {
+  width: 25vw;
+  height: 25vh;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 15%;
+  right: 15%;
+  left: 0;
+  z-index: 10;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.modalContainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  background-color: #1c1c21;
+  border: 1px solid rgba(76, 76, 255, 0.2);  
+  border-radius: 40px;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 24px 32px rgba(0, 0, 0, 0.04),
+    0px 16px 24px rgba(0, 0, 0, 0.04),
+    0px 4px 8px rgba(0, 0, 0, 0.04),
+    0px 0px 1px rgba(0, 0, 0, 0.04);
+  transition: 0.5s linear;
+  z-index: 20;  
+}
+
+.modalHeader {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  color: #fff;
+}
+
+.modalClose {
+  border: none;
+  background-color: transparent;
+}

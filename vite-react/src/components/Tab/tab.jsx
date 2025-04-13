@@ -12,8 +12,8 @@ export const TabItem = ({
         onClick={onClick}
         disabled={isActive}
         title={title}
-        >
-        <h2>{title}</h2>
+      >
+      <h2>{title}</h2>
       </Button>
     </div>
   );

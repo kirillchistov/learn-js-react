@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
 import { selectRestaurantById } from '../../redux/entities/restaurant/slice';
-import { Reviews } from './reviews';
+import { Menu } from './menu';
 
-export const ReviewsContainer = ({ restaurantId }) => {
+export const MenuContainer = ({ restaurantId }) => {
   const restaurant = useSelector((state) =>
     selectRestaurantById(state, restaurantId)
   );
@@ -10,11 +10,7 @@ export const ReviewsContainer = ({ restaurantId }) => {
   if (!restaurant) {
     return null;
   }
-  const { reviews } = restaurant;
+  const { menu, name } = restaurant;
 
-  return reviews.length ? (
-    <Reviews reviewIds={reviews} />
-  ) : (
-    'No reviews so far'
-  );
+  return <Menu menuIds={menu} name={name} />;
 };

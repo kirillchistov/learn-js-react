@@ -6,6 +6,7 @@
   align-content: space-evenly;
   justify-content: space-between;
   border: 1px dashed #efefef;
+  border-radius: 15px;
 };
 
 ul li {
