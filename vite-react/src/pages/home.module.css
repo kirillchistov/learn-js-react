@@ -10,10 +10,9 @@
   border-radius: 0.5em;
 };
 
-
 .heroImage {
-width: 90vw;
-padding-bottom: 40px;
+  width: 90vw;
+  padding-bottom: 40px;
 }
 
 .modalOverlay {
@@ -24,12 +23,10 @@ padding-bottom: 40px;
   position: fixed;
   top: 15%;
   right: 15%;
-  /* bottom: 0;
-  left: 0; */
-  /* opacity: 1; */ 
-  z-index: 21;
+  left: 0;
+  z-index: 10;
   overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: #000;
 }
 
 .modalContainer {
@@ -61,4 +58,3 @@ padding-bottom: 40px;
   border: none;
   background-color: transparent;
 }
-

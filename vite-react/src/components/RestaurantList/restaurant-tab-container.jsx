@@ -12,6 +12,8 @@ export const RestaurantTabContainer = ({ id, onClick, isActive }) => {
 
   const { name } = restaurant;
   return (
+
     <TabNav to={id} isActive={isActive} title={name}>{ name }</TabNav>
+
   );
 };
