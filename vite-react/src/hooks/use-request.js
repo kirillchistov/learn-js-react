@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectRequestStatus } from '../entities/request/slice';
+import { selectRequestStatus } from '../redux/entities/request/slice';
 
 export const useRequest = (thunk, ...params) => {
   const dispatch = useDispatch();

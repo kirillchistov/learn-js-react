@@ -1,24 +1,22 @@
-import { useState } from 'react';
 import { useSelector } from 'react-redux';
+import { useRequest } from '../../hooks/use-request';
 import { selectRestaurantIds } from '../../redux/entities/restaurant/slice';
 import { RestaurantTabContainer } from '../RestaurantList/restaurant-tab-container';
 import { Outlet } from 'react-router';
+import { getRestaurants } from '../../redux/entities/restaurant/get-restaurants';
 import styles from './restaurants-page.module.css';
 
 export const RestaurantsPage = () => {
-
+  const requestStatus = useRequest(getRestaurants);
   const restaurantIds = useSelector(selectRestaurantIds);
 
-  const [activeRestaurantId, setActiveRestaurantId] = useState(
-    restaurantIds[0]
-  );
+  if (requestStatus === 'idle' || requestStatus === 'pending') {
+    return 'loading';
+  }
 
-  const handleSetActiveRestaurantId = (id) => {
-    if (activeRestaurantId === id) {
-      return;
-    }
-    setActiveRestaurantId(id);
-  };
+  if (requestStatus === 'rejected') {
+    return 'error';
+  }
 
   return (
     <div className={'container'}>
@@ -27,10 +25,6 @@ export const RestaurantsPage = () => {
           <RestaurantTabContainer
             key={id}
             id={id}
-            onClick={() => {
-              handleSetActiveRestaurantId(id);
-            }}
-            isActive={activeRestaurantId === id}
           />
         ))}
       </div>

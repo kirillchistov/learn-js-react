@@ -10,9 +10,7 @@ export const HomePage = () => {
       <Link to='/restaurants'>All restaurants</Link>
       <Modal>
         <div className={styles.modalOverlay}>
-          {/* <div className={styles.modalContainer}> */}
-            <h3 className={styles.modalHeader}>Modal is visible</h3>
-          {/* </div> */}
+          <h3 className={styles.modalHeader}>Modal is visible</h3>
         </div>
       </Modal>
       <img 

@@ -1,4 +1,6 @@
-.root {
+.container {
+  font-size: 1em;
+  padding: .5em 1em;
   box-shadow: none;
   border: none;
   cursor: pointer;
@@ -17,13 +19,23 @@
   padding: 6px 12px;
 }
 
-.light {
+.light.default {
   background-color: #f5ee79;
   color: #6938EF;
 }
 
-.dark {
+.dark.default {
   background-color: #09011f;
   color: #f5ee79;
+}
 
+.active {
+  background-color: #f3e926;
+  color: #09011f;
+}
+
+.themeToggle {
+  display: inline-block;
+  padding: 5px;
+  border-radius: 8px;
 }

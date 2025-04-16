@@ -4,7 +4,7 @@ import { getDishes } from './get-dishes';
 import { getDish } from './get-dish';
 
 export const dishSlice = createSlice({
-  name: 'dishSlice',
+  name: 'dishes',
   initialState: entityAdapter.getInitialState(),
   extraReducers: (builder) => 
     builder
@@ -16,7 +16,7 @@ export const dishSlice = createSlice({
       })
 });
 
-const selectDishSlice = (state) => state.dishSlice;
+const selectDishSlice = (state) => state.dishes;
 
 export const {
   selectIds: selectDishIds,

@@ -2,8 +2,8 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 export const getReviews = createAsyncThunk(
   'reviews/getReviews',
-//   async (restaurantId, { getState, dispatch, rejectWithValue }) => {
-  async (restaurantId, { rejectWithValue }) => {
+  async (restaurantId, { getState, dispatch, rejectWithValue }) => {
+  // async (restaurantId, { rejectWithValue }) => {
     const response = await fetch(
       `http://localhost:3001/api/reviews?restaurantId=${restaurantId}`
     );
@@ -11,7 +11,7 @@ export const getReviews = createAsyncThunk(
     const result = await response.json();
 
     if (!result.length) {
-      return rejectWithValue('no data in get-reviews');
+      return rejectWithValue('no data');
     }
 
     return result;

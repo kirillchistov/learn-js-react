@@ -1,11 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { entityAdapter } from '../restaurant/slice';
-// import { normalizedReviews } from '../../../constants/normalized-mock';
 import { getReviews } from './get-reviews';
 import { getReview } from './get-review';
 
 export const reviewSlice = createSlice({
-  name: 'reviewSlice',
+  name: 'reviews',
   initialState: entityAdapter.getInitialState(),
   extraReducers: (builder) =>
     builder
@@ -17,10 +16,10 @@ export const reviewSlice = createSlice({
       }),
 });
 
-const selectReviewSlice = (state) => state.reviewSlice;
+const selectReviewSlice = (state) => state.reviews;
 
 export const {
   selectIds: selectReviewIds,
   selectById: selectReviewById,
-  selectTotal: selectReviewsTotal,
+  selectTotal: selectReviewTotal,
 } = entityAdapter.getSelectors(selectReviewSlice);

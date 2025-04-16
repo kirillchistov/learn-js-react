@@ -7,14 +7,11 @@ import { userSlice } from './entities/user/slice';
 import { requestSlice } from './entities/request/slice';
 
 const loggerMiddleware = (store) => (next) => (action) => {
-// const loggerMiddleware = () => (next) => (action) => {
-  console.log(action);
   return next(action)
 }
 
 export const store = configureStore({
   reducer: {
-    [userSlice.name]: userSlice.reducer,
     [restaurantSlice.name]: restaurantSlice.reducer,
     [dishSlice.name]: dishSlice.reducer,
     [reviewSlice.name]: reviewSlice.reducer,

@@ -1,19 +1,35 @@
 import { useSelector } from 'react-redux';
-import { selectRestaurantById } from '../../redux/entities/restaurant/slice';
+import { selectReviewIds } from '../../redux/entities/review/slice';
+import { getReviews } from '../../redux/entities/review/get-reviews';
+import { getUsers } from '../../redux/entities/user/get-users';
+import { useRequest } from '../../hooks/use-request';
 import { Reviews } from './reviews';
 
 export const ReviewsContainer = ({ restaurantId }) => {
-  const restaurant = useSelector((state) =>
-    selectRestaurantById(state, restaurantId)
-  );
 
-  if (!restaurant) {
-    return null;
+  const reviewRequestStatus = useRequest(getReviews, restaurantId);
+  const usersRequestStatus = useRequest(getUsers);
+
+  const reviewIds = useSelector(selectReviewIds);
+
+  const isLoading =
+    reviewRequestStatus === 'idle' ||
+    reviewRequestStatus === 'pending' ||
+    usersRequestStatus === 'idle' ||
+    usersRequestStatus === 'pending';
+
+  const isError =
+    reviewRequestStatus === 'rejected' || usersRequestStatus === 'rejected';
+
+  if (isLoading) {
+    return 'loading....';
   }
-  const { reviews } = restaurant;
+  if (isError) {
+    return 'error';
+  }
 
-  return reviews.length ? (
-    <Reviews reviewIds={reviews} />
+  return reviewIds.length ? (
+    <Reviews reviewIds={reviewIds} />
   ) : (
     'No reviews so far'
   );
