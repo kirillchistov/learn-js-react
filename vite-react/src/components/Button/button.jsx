@@ -9,7 +9,6 @@ export const Button = ({
   disabled,
   colorVariant = 'default',
   viewVariant = 'default',
-  // size = '500',
   className,
 }) => {
   const { theme } = use(ThemeContext);

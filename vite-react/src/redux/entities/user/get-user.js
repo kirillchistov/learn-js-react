@@ -4,7 +4,6 @@ import { selectUserById } from './slice';
 export const getUser = createAsyncThunk(
   'userId/getUser',
   async (userId, { getState, dispatch, rejectWithValue }) => {
-  // async (userId, { rejectWithValue }) => {
     const response = await fetch(
       `http://localhost:3001/api/user/${userId}`
     );

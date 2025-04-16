@@ -12,7 +12,6 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, Routes, Route, Navigate, Outlet } from 'react-router';
 import { store } from '../../redux/store';
 import './app.module.css';
-// import 'react-loading-skeleton/dist/skeleton.css';
 
 export const App = () => {
   return (

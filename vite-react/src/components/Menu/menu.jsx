@@ -1,7 +1,4 @@
-// import { useSelector } from 'react-redux';
 import {DishTabContainer} from '../DishTab/dish-tab-container';
-// import { selectDishIds } from '../../redux/entities/dish/slice';
-// import { selectRestaurantById } from '../../redux/entities/restaurant/slice';
 
 export const Menu = ({ menuIds }) => {
 
