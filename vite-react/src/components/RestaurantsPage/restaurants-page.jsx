@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { useRequest } from '../../hooks/use-request';
 import { selectRestaurantIds } from '../../redux/entities/restaurant/slice';
-import { RestaurantTabContainer } from '../RestaurantList/restaurant-tab-container';
+import { RestaurantTabContainer } from '../RestaurantTab/restaurant-tab-container';
 import { Outlet } from 'react-router';
 import { getRestaurants } from '../../redux/entities/restaurant/get-restaurants';
 import styles from './restaurants-page.module.css';

@@ -1,5 +1,4 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-// import { selectRestaurantById } from './slice';
 
 export const getRestaurant = createAsyncThunk(
   'restaurantId/getRestaurant',
