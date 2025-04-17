@@ -84,7 +84,7 @@ headRed {
 }
 
 button {
-  border-radius: 8px;
+  border-radius: .5em;
   border: 1px solid transparent;
   margin-left: 0.6em;
   margin-right: 0.6em;
