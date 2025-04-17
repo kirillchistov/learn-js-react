@@ -23,6 +23,7 @@ export const MenuContainer = ({ restaurantId }) => {
   if (!restaurant) {
     return null;
   }
+
   const { name } = restaurant;
 
   return <Menu menuIds={menuIds} name={name} />;
