@@ -6,9 +6,6 @@ import { cartSlice } from './entities/cart/slice';
 import { userSlice } from './entities/user/slice';
 import { requestSlice } from './entities/request/slice';
 
-// const loggerMiddleware = (store) => (next) => (action) => {
-//   return next(action)
-// }
 
 export const store = configureStore({
   reducer: {
@@ -19,5 +16,4 @@ export const store = configureStore({
     [userSlice.name]: userSlice.reducer,
     [requestSlice.name]: requestSlice.reducer,    
   },
-  // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(loggerMiddleware),
 });

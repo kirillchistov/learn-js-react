@@ -3,7 +3,7 @@ import { selectReviewById } from './slice-old';
 
 export const getReview = createAsyncThunk(
   'reviewId/getReview',
-  async (reviewId, { getState, dispatch, rejectWithValue }) => {
+  async (reviewId, { rejectWithValue }) => {
 
     const response = await fetch(
       `http://localhost:3001/api/reviews/${reviewId}`
@@ -17,9 +17,9 @@ export const getReview = createAsyncThunk(
 
     return result;
   },
-  // {
-  //   condition: (reviewId, { getState }) => {
-  //     return !selectReviewById(getState(), reviewId);
-  //   },
-  // }  
+  {
+    condition: (reviewId, { getState }) => {
+      return !selectReviewById(getState(), reviewId);
+    },
+  }  
 );

@@ -10,8 +10,6 @@ import {
   REQUEST_STATUS_REJECTED,
 } from '../constants/redux';
 
-// import { ReviewsContainer } from '../components/Reviews/reviews-container';
-
 export const ReviewPage = () => {
   const { restaurantId } = useParams();
 
@@ -46,6 +44,4 @@ export const ReviewPage = () => {
     <div>No reviews yet</div>
   );
 
-
-  // return <ReviewsContainer restaurantId={restaurantId} />;
 };
