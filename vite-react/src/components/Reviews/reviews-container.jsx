@@ -3,7 +3,7 @@ import { selectReviewIds } from '../../redux/entities/review/slice';
 import { getReviews } from '../../redux/entities/review/get-reviews';
 import { getUsers } from '../../redux/entities/user/get-users';
 import { useRequest } from '../../hooks/use-request';
-import { Reviews } from './reviews';
+import { Review } from './review';
 
 export const ReviewsContainer = ({ restaurantId }) => {
 

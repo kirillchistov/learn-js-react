@@ -1,6 +1,6 @@
+import { use } from 'react';
 import { AuthContext } from '../../auth-context';
 import { useSelector } from 'react-redux';
-import { use } from 'react';
 import { selectDishById } from '../../redux/entities/dish/slice';
 import { DishCounter } from '../DishCounter/dish-counter';
 import { DishTab } from './dish-tab';

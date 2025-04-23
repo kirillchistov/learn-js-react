@@ -1,25 +1,18 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { entityAdapter } from '../restaurant/slice';
-import { getReviews } from './get-reviews';
-import { getReview } from './get-review';
+import { createEntityAdapter, createSlice } from '@reduxjs/toolkit';
+import { getReviewsByRestaurantId } from './get-reviews-by-restaurant-id';
+
+const entityAdapter = createEntityAdapter();
 
 export const reviewSlice = createSlice({
   name: 'reviews',
   initialState: entityAdapter.getInitialState(),
   extraReducers: (builder) =>
-    builder
-      .addCase(getReviews.fulfilled, (state, { payload }) => {
-        entityAdapter.setAll(state, payload);
-      })
-      .addCase(getReview.fulfilled, (state, { payload }) => {
-        entityAdapter.upsertOne(state, payload);
-      }),
+    builder.addCase(getReviewsByRestaurantId.fulfilled, (state, { payload }) => {
+      entityAdapter.setMany(state, payload);
+    }),
 });
 
 const selectReviewSlice = (state) => state.reviews;
 
-export const {
-  selectIds: selectReviewIds,
-  selectById: selectReviewById,
-  selectTotal: selectReviewTotal,
-} = entityAdapter.getSelectors(selectReviewSlice);
+export const { selectById: selectReviewById, selectIds: selectReviewIds } =
+  entityAdapter.getSelectors(selectReviewSlice);

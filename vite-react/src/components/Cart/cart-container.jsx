@@ -5,9 +5,5 @@ import { Cart } from './cart';
 export const CartContainer = () => {
   const itemIds = useSelector(selectCartItemIds);
 
-  if (!itemIds.length) {
-    return null;
-  }
-
   return <Cart itemIds={itemIds} />;
 };

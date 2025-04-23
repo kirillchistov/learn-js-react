@@ -2,6 +2,10 @@ import { ItemContainer } from '../CartItem/item-container';
 
 export const Cart = ({ itemIds} ) => {
 
+  if (!itemIds.length) {
+    return null;
+  }
+
   return (
     <>
       <h3>Your cart</h3>
@@ -9,7 +13,7 @@ export const Cart = ({ itemIds} ) => {
         {itemIds.map((id) => (
           <li key={id}>
             <ItemContainer id={id} />
-          </li>
+            </li>
         ))}
       </ul>
     </>

@@ -4,6 +4,10 @@ import { useSelector } from 'react-redux';
 
 export const ReviewContainer = ({ id }) => {
   const review = useSelector((state) => selectReviewById(state, id));
-  const { text } = review;
-  return <Review text={text} />;
+
+  if (!review?.text) {
+    return null;
+  }
+
+  return <Review text={review.text} userId={review.user} />;
 };

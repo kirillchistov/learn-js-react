@@ -20,7 +20,7 @@ export const Dish = ({ id, name, price, ingredients }) => {
       </div>
       <ul>
         <li>price: {price}</li>
-        <li>ingredients: {ingredients}</li>
+        <li>ingredients: {ingredients.join(', ')}</li>
       </ul>
     </div>
   );
