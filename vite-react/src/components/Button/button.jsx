@@ -7,18 +7,20 @@ export const Button = ({
   title,
   onClick,
   disabled,
-  size = '500',
+  colorVariant = 'default',
+  viewVariant = 'default',
   className,
 }) => {
   const { theme } = use(ThemeContext);
 
   return (
     <button
-      className={classNames(styles.root, className, {
-        [styles.size500]: size === '500',
-        [styles.size400]: size === '400',
-        [styles.dark]: theme === 'dark',
+      className={classNames(styles.container, className, {
+        [styles.default]: colorVariant === 'default',
+        [styles.active]: colorVariant === 'active',
         [styles.light]: theme === 'light',
+        [styles.dark]: theme === 'dark',
+        [styles.themeToggle]: viewVariant === 'themeToggle',
       })}
       disabled={disabled}
       onClick={onClick}

@@ -5,6 +5,7 @@ import { CartItem } from './cart-item';
 
 export const ItemContainer = ({ id }) => {
   const dish = useSelector((state) => selectDishById(state, id));
+
   if (!dish) {
     return null;
   }
