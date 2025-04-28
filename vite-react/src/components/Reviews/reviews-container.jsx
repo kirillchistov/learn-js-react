@@ -36,13 +36,11 @@ export const ReviewsContainer = ({ restaurantId }) => {
     return null;
   }
 
-  return data?.length ? (
+  return (
     <Reviews
       reviews={data}
       onAddReview={handleSubmit}
       isSubmitButtonDisabled={isAddReviewLoading}
     />
-  ): (
-    'No reviews yet'
   );
 };
