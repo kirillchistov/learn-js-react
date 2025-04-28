@@ -1,37 +1,29 @@
-import { Tabs } from '../components/tabs/tabs';
-import { useSelector } from 'react-redux';
-import { selectRestaurantIds } from '../redux/entities/restaurant/slice';
-import { RestaurantTabContainer } from '../components/RestaurantTab/restaurant-tab-container';
 import { Outlet } from 'react-router';
-import { getRestaurants } from '../redux/entities/restaurant/get-restaurants';
-import {
-  REQUEST_STATUS_PENDING,
-  REQUEST_STATUS_REJECTED,
-} from '../constants/redux';
-import { useRequest } from '../hooks/use-request';
+import { useGetRestaurantsQuery } from '../redux/services/api';
+import { TabNav } from '../components/Tab/tab-nav';
+import styles from './restaurants.module.css'
 
 export const RestaurantsPage = () => {
-  const restaurantIds = useSelector(selectRestaurantIds);
-  const requestStatus = useRequest(getRestaurants);
 
-  if (requestStatus === REQUEST_STATUS_PENDING || !restaurantIds?.length) {
-    return 'loading...';
+  const { data, isLoading, isError } = useGetRestaurantsQuery();
+
+  if (isLoading) {
+    return 'loading....';
   }
-
-  if (requestStatus === REQUEST_STATUS_REJECTED) {
-    return 'ERROR';
+  if (isError) {
+    return 'error';
   }
 
   return (
     <div>
       <h1>Restaurants Page</h1>
-
-      <Tabs>
-        {restaurantIds.map((id) => (
-          <RestaurantTabContainer key={id} id={id} />
+      <div className={styles.restaurantContainer}>
+        {data.map(({ id, name }) => (
+          <TabNav key={id} to={id}>
+            {name}
+          </TabNav>
         ))}
-      </Tabs>
-
+      </div>
       <Outlet />
     </div>
   );

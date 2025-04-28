@@ -1,12 +1,15 @@
-import { AuthContext } from '../../auth-context';
 import { use } from 'react';
+import { useNavigate } from 'react-router';
+import { AuthContext } from '../../auth-context';
 import { DishCounter } from '../DishCounter/dish-counter';
 import styles from './dish.module.css';
 
 export const Dish = ({ id, name, price, ingredients }) => {
 
+  const navigate = useNavigate();
   const { auth } = use(AuthContext);
   const { isAuthorized } = auth;
+
 
   if (!name) {
     return null;
@@ -22,6 +25,9 @@ export const Dish = ({ id, name, price, ingredients }) => {
         <li>price: {price}</li>
         <li>ingredients: {ingredients.join(', ')}</li>
       </ul>
+      <button onClick={() => navigate(-1)}>
+        Назад
+      </button>  
     </div>
   );
 };

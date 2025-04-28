@@ -1,18 +1,27 @@
+import { use } from 'react';
 import { Counter } from '../Counter/counter';
+import { Button } from '../Button/button';
 import { useForm } from '../../hooks/use-form';
+import { AuthContext } from '../../auth-context';
+
 import styles from './review-form.module.css';
 
-export const ReviewForm = () => {
+export const ReviewForm = ({ onSubmit, isSubmitButtonDisabled }) => {
   const {
-    name,
-    text,
-    rating,
+    form,
+    comment,
     setRatingIncrement,
     setRatingDecrement,
     setName,
     setText,
     clearForm,
   } = useForm();
+
+  const { text, rating, name } = form;
+
+  const { auth } = use(AuthContext);
+  const { userId } = auth;
+
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -36,7 +45,7 @@ export const ReviewForm = () => {
         <div>
           <textarea
             className={styles.textarea}
-            value={text} 
+            value={comment} 
             onChange={(e) => setText(e.target.value)} 
           />
         </div>
@@ -49,8 +58,14 @@ export const ReviewForm = () => {
           />
         </div>
         <div>
-          <button className={styles.clearButton} onClick={clearForm}>Clear</button>
-          <button className={styles.submitButton} onClick={handleFormSubmit}>Submit</button>
+          <Button title='Clear' onClick={clearForm} />
+          <Button
+            title='Submit'
+            disabled={isSubmitButtonDisabled}
+            onClick={() =>
+              onSubmit({ text, rating, userId })
+            }
+          />
         </div>
       </div>
     </form>

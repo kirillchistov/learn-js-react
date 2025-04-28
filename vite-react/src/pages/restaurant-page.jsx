@@ -4,5 +4,9 @@ import { RestaurantContainer } from '../components/Restaurant/restaurant-contain
 export const RestaurantPage = () => {
   const { restaurantId } = useParams();
 
-  return <RestaurantContainer id={restaurantId} />;
+  return (
+    <div>
+      <RestaurantContainer id={restaurantId} />
+    </div>
+  );
 };
