@@ -1,3 +1,5 @@
+export const BASEURL = 'http://localhost:3001/api';
+
 export const MIN_COUNT = 0;
 export const MAX_COUNT = 5;
 

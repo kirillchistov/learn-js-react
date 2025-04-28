@@ -1,5 +1,35 @@
 .main {
   display: flex;
-  flex: 1 0 auto;
-  padding: 32px 16px;
+  align-items: stretch;
+  align-content: center;
+  /* flex: auto; */
+  padding: 16px 8px;
+}
+
+.counter {
+  padding-left: 2em;
+}
+
+.container {
+  display: flex;
+  margin: 1em 0 0 0;
+  padding: 0.7em;
+  min-height: 1em;
+  align-items: center;
+  align-content: space-evenly;
+  justify-content: space-between;
+  border: 1px dashed #efefef;
+  border-radius: .7em;
+};
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.itemTitle {
+  padding: 8px 0;
 }

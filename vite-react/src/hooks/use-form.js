@@ -1,4 +1,4 @@
-import { useReducer, useCallback } from 'react';
+import { useReducer } from 'react';
 import { 
   MIN_COUNT, 
   MAX_COUNT,
@@ -28,40 +28,39 @@ const reducer = (state, { type, payload }) => {
       };
     
     case CLEAR_FORM:
-      return DEFAULT_FORM_VALUE;
+      return { ...DEFAULT_FORM_VALUE };
     default:
       return state;
   }
 };
 
 export const useForm = () => {
-
   const [form, dispatch] = useReducer(reducer, DEFAULT_FORM_VALUE);
 
   const { name, text, rating } = form;
 
-  const setName = useCallback (
-    (name) => dispatch({ type: SET_NAME_ACTION, payload: name }),
-    []
-  );
-  const setText = useCallback (
-    (text) => dispatch({ type: SET_TEXT_ACTION, payload: text }),
-    []
-  );
-  const setRatingIncrement = useCallback (
-    () => dispatch({ type: SET_RATING_INCREMENT }),
-    []
-  );
-  const setRatingDecrement = useCallback(
-    () => dispatch({ type: SET_RATING_DECREMENT }),
-    []
-  );
-  const clearForm = useCallback (
-    () => dispatch({ type: CLEAR_FORM }),
-    []
-  );
+  const setName = (name) => {
+    dispatch({ type: SET_NAME_ACTION, payload: name });
+  };
+
+  const setText = (text) => {
+    dispatch({ type: SET_TEXT_ACTION, payload: text });
+  };
+  
+  const setRatingIncrement = () => {
+    dispatch({ type: SET_RATING_INCREMENT });
+  };
+
+  const setRatingDecrement = () => {
+    dispatch({ type: SET_RATING_DECREMENT });
+  };
+
+  const clearForm = () => {
+    dispatch({ type: CLEAR_FORM });
+  };
 
   return {
+    form,
     name,
     text,
     rating,

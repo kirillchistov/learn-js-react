@@ -1,12 +1,16 @@
-import { useSelector } from 'react-redux';
-import { selectDishById } from '../../redux/entities/dish/slice';
+import { useGetDishesByRestaurantIdQuery } from '../../redux/services/api';
 
 import { CartItem } from './cart-item';
 
 export const ItemContainer = ({ id }) => {
-  const dish = useSelector((state) => selectDishById(state, id));
+  const { data: dish } = useGetDishesByRestaurantIdQuery(undefined, {
+    selectFromResult: (result) => ({
+      ...result,
+      data: result.data?.find(({ id: dishId }) => dishId === id),
+    }),
+  });
 
-  if (!dish) {
+  if (!dish?.name) {
     return null;
   }
 

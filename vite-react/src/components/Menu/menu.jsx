@@ -1,17 +1,18 @@
-import { DishContainer } from '../Dish/dish-container';
+import { DishTab } from '../DishTab/dish-tab.jsx';
+import styles from './menu.module.css';
 
-export const Menu = ({ menuIds }) => {
+export const Menu = ({ dishes }) => {
 
   return (
     <>
       <h3>Menu</h3>
-        <ul>
-          {menuIds?.map((id) => (
-            <li key={id}>
-              <DishContainer id={id} />
-            </li>
-          ))}
-        </ul>
+      <ul>
+        {dishes.map(({ id, name }) => (
+          <li key={id} className={styles.main}>
+            <DishTab id={id} name={name} />
+          </li>
+        ))}
+      </ul>
     </>
-  )
-}
+  );
+};

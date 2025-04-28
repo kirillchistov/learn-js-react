@@ -1,18 +1,20 @@
-import { useSelector } from 'react-redux';
 import { Menu } from './menu';
-import { selectDishById } from '../../redux/entities/dish/slice';
+import { useGetDishesByRestaurantIdQuery } from '../../redux/services/api';
 
-export const MenuContainer = ({ id }) => {
-  const dish = useSelector((state) =>
-    selectDishById(state, id)
-  );
+export const MenuContainer = ({ restaurantId }) => {
 
+  const {
+    isLoading: isGetDishesLoading,
+    isError: isDishesError,
+    data,
+  } = useGetDishesByRestaurantIdQuery(restaurantId);
 
-  if (!dish) {
-    return null;
+  if (isGetDishesLoading) {
+    return 'loading....';
+  }
+  if (isDishesError) {
+    return 'error';
   }
 
-  const { name } = dish;
-
-  return <Menu id={id} name={name} />;
+  return <Menu dishes={data} />;
 };
