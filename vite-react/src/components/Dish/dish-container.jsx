@@ -1,3 +1,5 @@
+'use client';
+
 import { Dish } from './dish';
 import { useGetDishByIdQuery } from '../../redux/services/api';
 

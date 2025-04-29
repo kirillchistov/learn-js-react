@@ -1,3 +1,5 @@
+'use client';
+
 import { use } from 'react';
 import { AuthContext } from '../../auth-context';
 import { useSelector } from 'react-redux';

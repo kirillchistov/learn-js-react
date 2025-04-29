@@ -1,3 +1,5 @@
+'use client';
+
 import { useParams } from 'react-router';
 import { selectRestaurantById } from '../redux/entities/restaurant/slice';
 import { useSelector } from 'react-redux';

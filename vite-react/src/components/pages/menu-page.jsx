@@ -1,3 +1,5 @@
+'use client';
+
 import { useParams } from 'react-router';
 import { MenuContainer } from '../components/Menu/menu-container'
 

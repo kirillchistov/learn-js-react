@@ -1,3 +1,5 @@
+'use client';
+
 import { Link } from 'react-router';
 import { Modal } from '../components/Modal/modal';
 import heroImage from '../assets/images/hero-image.jpg';

@@ -1,3 +1,5 @@
+'use client';
+
 import { DishTab } from '../DishTab/dish-tab.jsx';
 import styles from './menu.module.css';
 

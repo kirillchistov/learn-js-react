@@ -1,3 +1,5 @@
+'use client';
+
 import { Button } from '../Button/button';
 import styles from './tab.module.css';
 

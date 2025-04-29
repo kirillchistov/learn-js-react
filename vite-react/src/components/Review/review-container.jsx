@@ -1,3 +1,5 @@
+'use client';
+
 import { selectReviewById } from '../../redux/entities/review/slice';
 import { Review } from './review';
 import { useSelector } from 'react-redux';

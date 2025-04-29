@@ -1,3 +1,5 @@
+'use client';
+
 import { Outlet } from 'react-router';
 import { useGetRestaurantsQuery } from '../redux/services/api';
 import { TabNav } from '../components/Tab/tab-nav';

@@ -1,23 +1,24 @@
 import { Layout } from '../Layout/layout';
-import { RestaurantsPage } from '../../pages/restaurants-page';
-import { HomePage } from '../../pages/home-page';
-import { RestaurantPage } from '../../pages/restaurant-page';
-import { MenuPage } from '../../pages/menu-page';
-import { DishPage } from '../../pages/dish-page';
-import { ReviewsPage } from '../../pages/reviews-page';
+import { RestaurantsPage } from '../pages/restaurants-page';
+import { HomePage } from '../pages/home-page';
+import { RestaurantPage } from '../pages/restaurant-page';
+import { MenuPage } from '../pages/menu-page';
+import { DishPage } from '../pages/dish-page';
+import { ReviewsPage } from '../pages/reviews-page';
 import { ThemeContextProvider } from '../../theme-context/theme-context';
 import { AuthContextProvider } from '../../auth-context/auth-context';
 import { Provider } from 'react-redux';
-import { BrowserRouter, Routes, Route, Navigate, Outlet } from 'react-router';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router';
 import { store } from '../../redux/store';
-import './app.module.css';
+import './app.css';
+import './reset.css';
 
 export const App = () => {
   return (
-    <Provider store={store}>
-      <AuthContextProvider>
-        <ThemeContextProvider>
-          <BrowserRouter>
+    <BrowserRouter>
+      <Provider store={store}>
+        <AuthContextProvider>
+          <ThemeContextProvider>
             <Routes>
               <Route element={<Layout />}>
                 <Route index element={<HomePage />} />
@@ -33,9 +34,9 @@ export const App = () => {
               </Route>
               <Route path='*' element={<Navigate to='/' />} />
             </Routes>
-          </BrowserRouter>
-        </ThemeContextProvider>
-      </AuthContextProvider>
-    </Provider>
+          </ThemeContextProvider>
+        </AuthContextProvider>
+      </Provider>
+    </BrowserRouter>
   );
 };

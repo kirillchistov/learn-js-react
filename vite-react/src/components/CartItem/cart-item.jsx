@@ -1,3 +1,5 @@
+'use client';
+
 import { DishCounter } from '../DishCounter/dish-counter';
 import styles from './cart-item.module.css';
 

@@ -1,3 +1,5 @@
+'use client';
+
 import { useProgress } from '../../hooks/use-progress';
 import styles from './progbar.module.css';
 

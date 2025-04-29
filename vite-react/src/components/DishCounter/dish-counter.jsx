@@ -1,3 +1,5 @@
+'use client';
+
 import { Counter } from '../Counter/counter';
 import { useCounter } from '../../hooks/use-counter';
 

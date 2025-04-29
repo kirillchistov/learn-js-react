@@ -1,3 +1,5 @@
+'use client';
+
 import { DishTabContainer } from '../DishTab/dish-tab-container';
 
 export const Dishes = ({ dishIds }) => {

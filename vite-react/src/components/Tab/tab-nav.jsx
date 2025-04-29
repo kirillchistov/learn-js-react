@@ -1,3 +1,5 @@
+'use client';
+
 import { NavLink } from 'react-router';
 import classNames from 'classnames/bind';
 import styles from './tab.module.css';
