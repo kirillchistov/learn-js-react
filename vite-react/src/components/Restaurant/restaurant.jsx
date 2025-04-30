@@ -13,8 +13,8 @@ export const Restaurant = ({ name }) => {
     <div className={styles.restaurant}>
       <h2 className={styles.heading}>{name}</h2>
       <nav className={styles.tabContainer}>
-        <TabNav to={'menu'}>Menu</TabNav>
-        <TabNav to={'reviews'}>Reviews</TabNav>
+        <TabNav href={'menu'}>Menu</TabNav>
+        <TabNav href={'reviews'}>Reviews</TabNav>
       </nav>
 
       <Outlet />

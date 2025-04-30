@@ -10,8 +10,8 @@ const Header = () => {
     <header>
       <div>
         <nav className={styles.header}>
-          <TabNav to={'/'}>Home</TabNav>
-          <TabNav to={'/restaurants'}>Restauarants</TabNav>
+          <TabNav href={'/'}>Home</TabNav>
+          <TabNav href={'/restaurants'}>Restauarants</TabNav>
           <ToggleThemeButton />
           <AuthButton />
         </nav>       

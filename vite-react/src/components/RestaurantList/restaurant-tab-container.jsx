@@ -13,9 +13,8 @@ export const RestaurantTabContainer = ({ id, isActive }) => {
   }
 
   const { name } = restaurant;
+
   return (
-
-    <TabNav to={id} isActive={isActive} title={name}>{ name }</TabNav>
-
+    <TabNav href={id} isActive={isActive} title={name}>{ name }</TabNav>
   );
 };

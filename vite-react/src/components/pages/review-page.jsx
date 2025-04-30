@@ -3,7 +3,7 @@
 import { useParams } from 'react-router';
 import { selectRestaurantById } from '../redux/entities/restaurant/slice';
 import { useSelector } from 'react-redux';
-import { Reviews } from '../components/Reviews/reviews';
+import { Reviews } from '../Reviews/reviews';
 import { getUsers } from '../redux/entities/user/get-users';
 import { useRequest } from '../hooks/use-request';
 import { getReviewsByRestaurantId } from '../redux/entities/review/get-reviews-by-restaurant-id';

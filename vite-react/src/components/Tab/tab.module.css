@@ -3,7 +3,7 @@
   color: #6938EF;
   font-size: .9em;
   font-weight: bold;
-  padding: 10px 28px;
+  padding: .5em 1em;
   box-shadow: none;
   border: none;
   border-radius: 0.5em;
@@ -13,18 +13,6 @@
   }  
 }
 
-.container {
-  font-size: .9em;
-  font-weight: bold;
-  padding: .5em 1em;
-  box-shadow: none;
-  border: none;
-  border-radius: 0.5em;
-  cursor: pointer;
-  &:hover {
-    opacity: 0.9;
-  }
-}
 
 .list {
   display: inline;

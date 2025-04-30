@@ -1,8 +1,8 @@
 'use client';
 
 import { Outlet } from 'react-router';
-import { useGetRestaurantsQuery } from '../redux/services/api';
-import { TabNav } from '../components/Tab/tab-nav';
+import { useGetRestaurantsQuery } from '../../redux/services/api';
+import { TabNav } from '../Tab/tab-nav';
 import styles from './restaurants.module.css'
 
 export const RestaurantsPage = () => {

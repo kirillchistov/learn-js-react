@@ -8,6 +8,13 @@
   color: green;
 }
 
+.container {
+  min-height: 600px;
+  margin-bottom: 1em;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
 .tabContainer {
   display: flex;
   gap: 1em;

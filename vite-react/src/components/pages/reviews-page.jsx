@@ -1,7 +1,7 @@
 'use client';
 
 import { useParams } from 'react-router';
-import { ReviewsContainer } from '../components/Reviews/reviews-container';
+import { ReviewsContainer } from '../Reviews/reviews-container';
 
 export const ReviewsPage = () => {
   const { restaurantId } = useParams();
