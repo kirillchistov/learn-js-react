@@ -1,4 +1,4 @@
-import { MenuContainer } from '@/components/Menu/menu-container';
+import { MenuContainer } from '../../../../components/Menu/menu-container';
 
 const MenuPage = async ({ params }) => {
   const { restaurantId } = await params;

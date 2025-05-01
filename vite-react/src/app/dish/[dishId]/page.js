@@ -1,4 +1,4 @@
-import { DishContainer } from "../../../components/Dish";
+import { DishContainer } from '@/components/Dish/dish-container';
 
 const DishPage = async ({ params }) => {
   const { dishId } = await params;

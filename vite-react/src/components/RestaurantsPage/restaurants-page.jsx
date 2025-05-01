@@ -19,7 +19,7 @@ export const RestaurantsPage = () => {
     <>
       <div className={styles.restaurantContainer}>
         {data.map(({ id, name }) => (
-          <TabNav key={id} to={id}>
+          <TabNav key={id} to={`/restaurants/${id}`}>
             {name}
           </TabNav>
         ))}

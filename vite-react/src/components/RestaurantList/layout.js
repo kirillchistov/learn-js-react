@@ -1,4 +1,4 @@
-import { RestaurantTabContainer } from './restaurant-tab-container';
+import { RestaurantTabContainer } from '@/components/RestaurantTab/restaurant-tab-container';
 import styles from './restaurant-list.module.css';
 
 

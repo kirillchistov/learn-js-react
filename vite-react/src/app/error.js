@@ -1,7 +1,7 @@
 'use client';
 
 const RootError = () => {
-  return <div>Death on Takeoff</div>;
+  return <div>root error</div>;
 };
 
 export default RootError;
