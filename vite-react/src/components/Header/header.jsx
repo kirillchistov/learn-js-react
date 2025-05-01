@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <header>
       <div>
-        <nav className={styles.header}>
+        <nav className={styles.container}>
           <TabNav href={'/'}>Home</TabNav>
           <TabNav href={'/restaurants'}>Restauarants</TabNav>
           <ToggleThemeButton />

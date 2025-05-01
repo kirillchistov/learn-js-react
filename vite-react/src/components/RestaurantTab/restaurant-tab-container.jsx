@@ -2,6 +2,7 @@
 
 import { useGetRestaurantsQuery } from '@/redux/services/api';
 import { RestaurantTabs } from './restaurant-tab';
+import styles from './restaurant-tab.module.css';
 
 export const RestaurantTabContainer = () => {
 
@@ -19,5 +20,9 @@ export const RestaurantTabContainer = () => {
     return null;
   }
 
-  return <RestaurantTabs restaurants={data} />;
+  return (
+    <nav className={styles.container}>
+      <RestaurantTabs restaurants={data} />
+    </nav>
+  )
 };

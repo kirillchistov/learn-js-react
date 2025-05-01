@@ -1,4 +1,4 @@
-.header {
+.container {
   display: flex;
   padding: 0.7em;
   min-height: 1em;
@@ -8,7 +8,3 @@
   border: 1px dashed #efefef;
   border-radius: 0.5em;
 };
-
-/* ul li {
-  display: inline;
-} */

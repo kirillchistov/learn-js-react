@@ -1,8 +1,5 @@
 import { TabNav } from '../Tab/tab-nav';
 
-// import styles from './restaurant-tab.module.css';
-
-
 export const RestaurantTabs = ({ restaurants }) => {
 
   return (
