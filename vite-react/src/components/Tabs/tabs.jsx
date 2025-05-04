@@ -1,5 +1,3 @@
-'use client';
-
 import styles from './tabs.module.css';
 
 export const Tabs = ({ children }) => {

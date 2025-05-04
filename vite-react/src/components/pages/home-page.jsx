@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link';
 import { Modal } from '../Modal/modal';
 import styles from './home.module.css';

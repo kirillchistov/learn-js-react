@@ -1,5 +1,3 @@
-'use client';
-
 import { ItemContainer } from '../CartItem/item-container';
 import styles from './cart.module.css';
 
