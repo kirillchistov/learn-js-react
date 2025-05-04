@@ -1,4 +1,5 @@
-import { Outlet } from 'react-router';
+'use client';
+
 import { useGetRestaurantsQuery } from '../../redux/services/api';
 import { TabNav } from '../Tab/tab-nav';
 import styles from './restaurants-page.module.css';
@@ -17,12 +18,11 @@ export const RestaurantsPage = () => {
     <>
       <div className={styles.restaurantContainer}>
         {data.map(({ id, name }) => (
-          <TabNav key={id} to={id}>
+          <TabNav key={id} to={`/restaurants/${id}`}>
             {name}
           </TabNav>
         ))}
       </div>
-      <Outlet />
     </>
   );
 };

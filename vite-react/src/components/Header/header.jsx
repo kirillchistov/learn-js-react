@@ -9,9 +9,9 @@ const Header = () => {
   return (
     <header>
       <div>
-        <nav className={styles.header}>
-          <TabNav to={'/'}>Home</TabNav>
-          <TabNav to={'/restaurants'}>Restauarants</TabNav>
+        <nav className={styles.container}>
+          <TabNav href={'/'}>Home</TabNav>
+          <TabNav href={'/restaurants'}>Restauarants</TabNav>
           <ToggleThemeButton />
           <AuthButton />
         </nav>       

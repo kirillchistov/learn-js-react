@@ -1,3 +1,5 @@
+'use client';
+
 import { use } from 'react';  
 import { TabNav } from '../Tab/tab-nav';
 import { DishCounter } from '../DishCounter/dish-counter.jsx';
@@ -11,7 +13,7 @@ export const DishTab = ({ name, id }) => {
 
   return (
     <div className={styles.container}>
-      <TabNav to={`/dish/${id}`} className={styles.dishTitle}>
+      <TabNav href={`/dish/${id}`} className={styles.dishTitle}>
         {name}
       </TabNav>
       {isAuthorized ? <span className={styles.counter}><DishCounter id={id} /></span> : null}

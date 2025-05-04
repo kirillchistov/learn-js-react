@@ -1,19 +1,17 @@
-import { useSelector } from 'react-redux';
-import { selectRestaurantById } from '../../redux/entities/restaurant/slice';
-import { TabNav } from '../Tab/tab-nav';
+'use client'
 
-export const RestaurantTabContainer = ({ id, isActive }) => {
+import { useGetRestaurantsQuery } from '@/redux/services/api.js';
+import { RestaurantsTabs } from '@/components/RestaurantTab/restaurant-tab-container';
 
-  const restaurant = useSelector((state) => selectRestaurantById(state, id));
+export const RestaurantsTabsContainer = () => {
+  const { data, isLoading, isError } = useGetRestaurantsQuery();
 
-  if (!restaurant) {
-    return null;
+  if (isLoading) {
+    return 'loading....';
+  }
+  if (isError) {
+    return 'error';
   }
 
-  const { name } = restaurant;
-  return (
-
-    <TabNav to={id} isActive={isActive} title={name}>{ name }</TabNav>
-
-  );
+  return <RestaurantsTabs restaurants={data} />;
 };

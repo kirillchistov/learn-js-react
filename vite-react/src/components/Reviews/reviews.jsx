@@ -1,3 +1,5 @@
+'use client';
+
 import { use } from 'react';
 import { AuthContext } from '../../auth-context';
 import { ReviewForm } from '../ReviewForm/review-form';
