@@ -1,14 +1,12 @@
-'use client';
-
-import { useSelector } from 'react-redux';
-import { selectCartItemIds } from '../../redux/entities/cart/slice';
+import { getDishesByRestaurantId } from '@/services/get-dishes-by-restaurant-id';
 import { Cart } from './cart';
 
-export const CartContainer = () => {
-  const itemIds = useSelector(selectCartItemIds);
+export const CartContainer = async () => {
 
-  if (!itemIds.length) {
+  const dishes = await getDishesByRestaurantId()
+
+  if (!dishes.length) {
     return null;
   }
-  return <Cart itemIds={itemIds} />;
+  return <Cart dishes={dishes} />;
 };

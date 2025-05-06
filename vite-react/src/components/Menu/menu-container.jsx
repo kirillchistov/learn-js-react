@@ -1,22 +1,10 @@
-'use client';
 
 import { Menu } from './menu';
-import { useGetDishesByRestaurantIdQuery } from '../../redux/services/api';
+import { getDishesByRestaurantId } from '@/services/get-dishes-by-restaurant-id';
 
-export const MenuContainer = ({ restaurantId }) => {
+export const MenuContainer = async ({ restaurantId }) => {
 
-  const {
-    isLoading: isGetDishesLoading,
-    isError: isDishesError,
-    data,
-  } = useGetDishesByRestaurantIdQuery(restaurantId);
+  const dishes = await getDishesByRestaurantId(restaurantId);
 
-  if (isGetDishesLoading) {
-    return 'loading....';
-  }
-  if (isDishesError) {
-    return 'error';
-  }
-
-  return <Menu dishes={data} />;
+  return <Menu dishes={dishes} />;
 };

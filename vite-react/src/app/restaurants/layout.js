@@ -1,3 +1,3 @@
-import { RestaurantsLayout } from '@/components/RestaurantList/layout';
+import { RestaurantsLayout } from '@/components/RestaurantTab/layout';
 
 export default RestaurantsLayout;

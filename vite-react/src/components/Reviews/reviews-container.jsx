@@ -1,48 +1,55 @@
 'use client';
 
-import {
-  useAddReviewMutation,
-  useGetReviewsByRestaurantIdQuery,
-  useGetUsersQuery,
-} from '../../redux/services/api';
+import { use, useCallback, useOptimistic } from 'react';
+import { AuthContext } from '@/auth-context/index';
+import { addReviewAction } from '@/actions/add-review-action';
 import { Reviews } from './reviews';
 
-export const ReviewsContainer = ({ restaurantId }) => {
+export const ReviewsContainer = ({ reviews, restaurantId }) => {
+  const [optimisticReview, addOptimisticReview] = useOptimistic(
+    reviews,
+    (currentState, optimisticValue) => [
+      ...currentState,
+      { ...optimisticValue, id: 'creating' },
+    ]
+  );
 
-  const { isLoading: isUsersLoading, isError: isUsersError } =
-    useGetUsersQuery();
-  const {
-    isLoading: isGetReviewsLoading,
-    isError: isReviewsError,
-    data,
-  } = useGetReviewsByRestaurantIdQuery(restaurantId);
+  const { userId } = use(AuthContext).auth;
 
-  const [addReview, { isLoading: isAddReviewLoading }] = useAddReviewMutation();
+  const handleAddReview = useCallback(
+    async (state, formData) => {
+      if (formData === null) {
+        return {
+          text: '',
+          rating: 5,
+        };
+      }
 
-  const handleSubmit = (review) => {
-    addReview({ restaurantId: restaurantId, review });
-  };
+      const text = formData.get('text');
+      const rating = formData.get('rating');
 
-  const isLoading = isUsersLoading || isGetReviewsLoading;
+      const review = { text, rating, userId };
 
-  const isError = isUsersError || isReviewsError;
+      addOptimisticReview(review);
 
-  if (isLoading) {
-    return 'loading....';
-  }
-  if (isError) {
-    return 'error';
-  }
+      await addReviewAction({ restaurantId, review });
 
-  if (!data.length) {
+      return {
+        text: 'default',
+        rating: 5,
+      };
+    },
+    [addOptimisticReview, restaurantId, userId]
+  );
+
+  if (!optimisticReview.length) {
     return null;
   }
 
   return (
-    <Reviews
-      reviews={data}
-      onAddReview={handleSubmit}
-      isSubmitButtonDisabled={isAddReviewLoading}
+    <Reviews 
+      reviews={optimisticReview} 
+      submitFormAction={handleAddReview} 
     />
   );
 };

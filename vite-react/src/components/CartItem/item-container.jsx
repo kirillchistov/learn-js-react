@@ -1,16 +1,10 @@
 'use client';
 
-import { useGetDishesByRestaurantIdQuery } from '../../redux/services/api';
-
 import { CartItem } from './cart-item';
 
-export const ItemContainer = ({ id }) => {
-  const { data: dish } = useGetDishesByRestaurantIdQuery(undefined, {
-    selectFromResult: (result) => ({
-      ...result,
-      data: result.data?.find(({ id: dishId }) => dishId === id),
-    }),
-  });
+export const ItemContainer = ({ id, dishes }) => {
+
+  const dish = dishes.find(({ id: dishId }) => dishId === id);
 
   if (!dish?.name) {
     return null;
