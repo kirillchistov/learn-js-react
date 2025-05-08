@@ -15,7 +15,6 @@ export const ReviewsContainer = ({ reviews, restaurantId }) => {
   );
 
   const { userId } = use(AuthContext).auth;
-  console.log(userId);
 
   const handleAddReview = useCallback(
     async (state, formData) => {
@@ -36,7 +35,7 @@ export const ReviewsContainer = ({ reviews, restaurantId }) => {
       await addReviewAction({ restaurantId, review });
 
       return {
-        text: 'default',
+        text: '',
         rating: 5,
       };
     },

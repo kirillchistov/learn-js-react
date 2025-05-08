@@ -13,8 +13,12 @@ export const RestaurantsTabsContainer = async () => {
 
   return (
     <div className={styles.container}>
-      <div><RestaurantTabs restaurants={restaurants} /></div>
-      <div><RestaurantsUpdateButton /></div>
+      <div className={styles.restList}>
+        <RestaurantTabs restaurants={restaurants} />
+      </div>
+      <div className={styles.updateButton}>
+        <RestaurantsUpdateButton />
+      </div>
     </div>
   )
 };

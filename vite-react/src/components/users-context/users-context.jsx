@@ -1,23 +1,23 @@
 'use client';
 
-import { useState } from 'react';
+// import { useState } from 'react';
 import { UsersContext } from '.';
 
-export const UsersContextProvider = ({ children }) => {
+export const UsersContextProvider = ({ children, users }) => {
 
-  const [auth, setAuth] = useState({ isAuthorized: false });
+  // const [auth, setAuth] = useState({ isAuthorized: false });
 
-  const userAuth = () => {
-    setAuth((prev) => {
-      return prev.isAuthorized
-        ? { isAuthorized: false }
-        : {
-            isAuthorized: true,
-            name: "User",
-            userId: "c3d4abd4-c3ef-46e1-8719-eb17db1d6e99",
-          };
-    });
-  };
+  // const userAuth = () => {
+  //   setAuth((prev) => {
+  //     return prev.isAuthorized
+  //       ? { isAuthorized: false }
+  //       : {
+  //           isAuthorized: true,
+  //           name: "SuperAdmin",
+  //           userId: "c3d4abd4-c3ef-46e1-8719-eb17db1d6e99",
+  //         };
+  //   });
+  // };
 
-  return <UsersContext value={{ auth, userAuth }}>{children}</UsersContext>;
+  return <UsersContext value={users}>{children}</UsersContext>;
 };
