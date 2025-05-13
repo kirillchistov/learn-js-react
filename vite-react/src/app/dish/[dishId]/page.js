@@ -1,7 +1,10 @@
 import { DishContainer } from '@/components/Dish/dish-container';
+import { Suspense } from 'react';
 
 const DishPage = async ({ params }) => {
   const { dishId } = await params;
-  return <DishContainer id={dishId} />;
+  <Suspense fallback='...loading'>
+    return <DishContainer id={dishId} />;
+  </Suspense>
 };
 export default DishPage;

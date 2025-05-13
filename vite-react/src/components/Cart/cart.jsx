@@ -11,7 +11,7 @@ export const Cart = ({ dishes }) => {
   const itemIds = useSelector(selectCartItemIds);
 
   return itemIds?.length ? (
-      <>
+      <div className={styles.container}>
         <h3>Your cart</h3>
         <ul>
           {itemIds.map((id) => (
@@ -20,11 +20,11 @@ export const Cart = ({ dishes }) => {
             </li>
           ))}
         </ul>
-      </>
+      </div>
   ): (
-    <>
+    <div className={styles.container}>
       <h3>Your cart</h3>
       <div>No items in your cart yet</div>
-    </>
+    </div>
   );
 };

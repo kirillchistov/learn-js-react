@@ -1,6 +1,7 @@
 'use client';
 
 import { use } from 'react';
+import Link from 'next/link';
 import { AuthContext } from '../../auth-context';
 import { ReviewForm } from '../ReviewForm/review-form';
 import { Review } from '../Review/review'
@@ -16,7 +17,9 @@ export const Reviews = ({ reviews, submitFormAction }) => {
       <ul>
         {reviews.map(({ id, text, userId }) => (
           <li key={id}>
-            <Review text={text} userId={userId} />
+            <Link href={`/reviews/${id}`}>
+              <Review text={text} userId={userId} />
+            </Link>
           </li>
         ))}
       </ul>
