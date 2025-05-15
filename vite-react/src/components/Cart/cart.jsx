@@ -1,24 +1,30 @@
+'use client'
+
 import { ItemContainer } from '../CartItem/item-container';
+import { useSelector } from 'react-redux';
+import { selectCartItemIds } from '@/redux/entities/cart/slice';
+
 import styles from './cart.module.css';
 
-export const Cart = ({ itemIds} ) => {
+export const Cart = ({ dishes }) => {
 
-  if (!itemIds.length) {
-    return null;
-  }
+  const itemIds = useSelector(selectCartItemIds);
 
   return itemIds?.length ? (
-      <>
+      <div className={styles.container}>
         <h3>Your cart</h3>
         <ul>
           {itemIds.map((id) => (
             <li key={id} className={styles.main}>
-              <ItemContainer id={id} />
+              <ItemContainer id={id} dishes={dishes} />
             </li>
           ))}
         </ul>
-      </>
+      </div>
   ): (
-    'No items in cart yet'
+    <div className={styles.container}>
+      <h3>Your cart</h3>
+      <div>No items in your cart yet</div>
+    </div>
   );
 };

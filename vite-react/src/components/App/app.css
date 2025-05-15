@@ -1,9 +1,9 @@
 body {
   margin: 0;
+  font-family: "Roboto Mono", serif;
 }
 
 :root {
-  font-family: Roboto, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 300;
 
@@ -44,6 +44,22 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
+
+h2 {
+  font-size: 2.8em;
+  line-height: 1.1;
+}
+
+h3 {
+  font-size: 2.4em;
+  line-height: 1;
+}
+
+p {
+  font-size: 2em;
+  line-height: 1;
+}
+
 
 ulGreen {
   color: "green";

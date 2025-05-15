@@ -1,73 +1,58 @@
 'use client';
 
-import { use } from 'react';
-import { Counter } from '../Counter/counter';
+import { useActionState } from 'react';
 import { Button } from '../Button/button';
-import { useForm } from '../../hooks/use-form';
-import { AuthContext } from '../../auth-context';
+// import { UsersContext } from '../users-context';
+
 
 import styles from './review-form.module.css';
 
-export const ReviewForm = ({ onSubmit, isSubmitButtonDisabled }) => {
-  const {
-    form,
-    comment,
-    setRatingIncrement,
-    setRatingDecrement,
-    setName,
-    setText,
-    clearForm,
-  } = useForm();
+export const ReviewForm = ({ submitFormAction, isSubmitButtonDisabled, initialFormValues = { text: '', rating: 5 }  }) => {
+  const [form, formAction] = useActionState(submitFormAction, initialFormValues);
 
-  const { text, rating, name } = form;
+  // const users = use(UsersContext);
+  // const user = users.find(({ userId: userId }) => userId === userId);
 
-  const { auth } = use(AuthContext);
-  const { userId } = auth;
-
-
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted')
-  };
+  // const { name } = user;
+  const { text, rating } = form;
+  console.log(`{name}: {text} / {rating}`);
 
   return (
-    <form onSubmit={handleFormSubmit}>
+    <form action={formAction}>
       <div className={styles.container}>
         <h4>Leave a review</h4>
-        <div><span>Name:</span></div>
         <div>
+          <span>Name:</span>
+        </div>
+        {/* <div>
           <input
             className={styles.input}
             type='text'
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            name='name'
+            defaultValue={name}
           />
-        </div>
+        </div> */}
         <div>Comment:</div>
         <div>
           <textarea
             className={styles.textarea}
-            value={comment} 
-            onChange={(e) => setText(e.target.value)} 
+            defaultValue={text}
+            name='text'
           />
         </div>
         <div>Your rating:</div>
         <div className={styles.reviewRating}>
-          <Counter
-            increment={setRatingIncrement}
-            decrement={setRatingDecrement}
-            value={rating}
+          <input
+            type='number'
+            min={1}
+            max={5}
+            defaultValue={rating}
+            name='rating'
           />
         </div>
         <div>
-          <Button title='Clear' onClick={clearForm} />
-          <Button
-            title='Submit'
-            disabled={isSubmitButtonDisabled}
-            onClick={() =>
-              onSubmit({ text, rating, userId })
-            }
-          />
+          <Button title='Clear' formAction={() => formAction(null)} />
+          <Button title='Submit' disabled={isSubmitButtonDisabled} />
         </div>
       </div>
     </form>

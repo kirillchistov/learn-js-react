@@ -1,5 +1,6 @@
 'use client';
 
+import { useFormStatus } from 'react-dom';
 import classNames from 'classnames';
 import styles from './button.module.css';
 import { use } from 'react';
@@ -12,8 +13,10 @@ export const Button = ({
   colorVariant = 'default',
   viewVariant = 'default',
   className,
+  formAction,
 }) => {
   const { theme } = use(ThemeContext);
+  const { pending } = useFormStatus();
 
   return (
     <button
@@ -24,8 +27,9 @@ export const Button = ({
         [styles.dark]: theme === 'dark',
         [styles.themeToggle]: viewVariant === 'themeToggle',
       })}
-      disabled={disabled}
+      disabled={disabled || pending}
       onClick={onClick}
+      formAction={formAction}
     >
       {title}
     </button>

@@ -1,11 +1,25 @@
-.container {
+.wrapper {
   display: flex;
+  flex-direction: column;
   padding: 0.7em;
   min-height: 1em;
   align-items: center;
   align-content: space-evenly;
   justify-content: space-between;
-  border: 1px dashed #efefef;
+  border: 1px dashed #5b5b5b;
+  border-radius: 0.5em;
+};
+
+.container {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  padding: 0.7em;
+  min-height: 1em;
+  align-items: center;
+  align-content: space-evenly;
+  justify-content: space-between;
+  border: 1px dashed #5b5b5b;
   border-radius: 0.5em;
 };
 
@@ -13,14 +27,18 @@
     display: grid;
     margin-top: 1em;
     margin-bottom: 1em;
-    padding: 10px;
+    padding: 1em;
     grid-template-columns: repeat(4, 1fr);
-    gap: 0.5em;
-    border: 1px dashed #efefef;
+    gap: 1em;
+    border: 1px dashed #5b5b5b;
 }
 
 .restHeading {
     font-size: 1em;
-    padding: 10px;
+    padding: 1em;
+}
 
+.updateButton {
+    font-size: 1em;
+    padding: 1em;
 }

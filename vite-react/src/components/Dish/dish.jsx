@@ -6,7 +6,7 @@ export const Dish = ({ id, name, price, ingredients }) => {
   return (
     <div className={styles.dish}>
       <div className={styles.container}>
-        <h3>{name}</h3>
+        <div><h3>{name}</h3></div>
         <div><DishCounter id={id} /></div> 
       </div>
       <ul>
