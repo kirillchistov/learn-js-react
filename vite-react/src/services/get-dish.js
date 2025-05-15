@@ -4,6 +4,6 @@ export const getDish = async (dishId) => {
       tags: ['getDish'],
     },
   });
-
+  console.log(result);
   return result.json();
 };

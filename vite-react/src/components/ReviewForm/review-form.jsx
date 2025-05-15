@@ -1,19 +1,19 @@
 'use client';
 
-import { useActionState, use } from 'react';
+import { useActionState } from 'react';
 import { Button } from '../Button/button';
-import { UsersContext } from '../users-context';
+// import { UsersContext } from '../users-context';
 
 
 import styles from './review-form.module.css';
 
-export const ReviewForm = ({ submitFormAction, isSubmitButtonDisabled }) => {
-  const [form, formAction] = useActionState(submitFormAction, { rating: 5 });
+export const ReviewForm = ({ submitFormAction, isSubmitButtonDisabled, initialFormValues = { text: '', rating: 5 }  }) => {
+  const [form, formAction] = useActionState(submitFormAction, initialFormValues);
 
-  const users = use(UsersContext);
-  const user = users.find(({ userId: userId }) => userId === userId);
+  // const users = use(UsersContext);
+  // const user = users.find(({ userId: userId }) => userId === userId);
 
-  const { name } = user;
+  // const { name } = user;
   const { text, rating } = form;
   console.log(`{name}: {text} / {rating}`);
 
@@ -24,14 +24,14 @@ export const ReviewForm = ({ submitFormAction, isSubmitButtonDisabled }) => {
         <div>
           <span>Name:</span>
         </div>
-        <div>
+        {/* <div>
           <input
             className={styles.input}
             type='text'
             name='name'
             defaultValue={name}
           />
-        </div>
+        </div> */}
         <div>Comment:</div>
         <div>
           <textarea

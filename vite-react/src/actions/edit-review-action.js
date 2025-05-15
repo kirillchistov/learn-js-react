@@ -12,7 +12,9 @@ export async function editReviewAction({ reviewId, review }) {
     }
   );
 
+  const response = await result.json();
+
   revalidateTag('getReviews');
   
-  return result.json();
+  return response;
 }

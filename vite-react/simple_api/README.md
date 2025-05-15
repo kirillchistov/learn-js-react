@@ -15,6 +15,7 @@
 1. GET /api/reviews?restaurantId=:restaurantId - получить отзывы по айди ресторана (/api/reviews?restaurantId=d32n32d8huasj)
 2. POST /api/review/:restaurantId - создать отзыв по айди ресторана (/api/review/d32n32d8huasj, а в бади сам отзыв без айдишки)
 3. PATCH /api/review/:reviewId - изменить отзыв по айди ресторана (/api/review/d32n32d8huasj, а в бади сам отзыв без айдишки)
+4. GET /api/reviews/:reviewId - получить отзывы по айди ресторана (/api/review?reviewId=BdRbT8AxuLz9cEm4zQjQ4)
 
 ## Пользователи
 

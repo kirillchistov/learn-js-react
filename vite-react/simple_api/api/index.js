@@ -58,6 +58,16 @@ router.get("/reviews", (req, res, next) => {
   reply(res, result);
 });
 
+router.get("/reviews/:reviewId", (req, res, next) => {
+  const reviewId = req.params?.reviewId;
+  let review;
+
+  if (reviewId) {
+    review = getById(reviews)(reviewId);
+  }
+  reply(res, review);
+});
+
 router.post("/review/:restaurantId", (req, res, next) => {
   const body = req.body;
   const restaurantId = req.params?.restaurantId;

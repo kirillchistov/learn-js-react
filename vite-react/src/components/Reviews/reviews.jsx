@@ -15,11 +15,9 @@ export const Reviews = ({ reviews, submitFormAction }) => {
     <div>
       <h3>Reviews</h3>
       <ul>
-        {reviews.map(({ id, text, userId }) => (
-          <li key={id}>
-            <Link href={`/reviews/${id}`}>
-              <Review text={text} userId={userId} />
-            </Link>
+        {reviews.map(({ id, text, rating, userId }) => (
+          <li key={id}>            
+            <Review text={text} id={id} rating={rating} userId={userId} />
           </li>
         ))}
       </ul>

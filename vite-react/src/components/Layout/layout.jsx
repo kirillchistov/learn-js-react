@@ -14,7 +14,7 @@ export const Layout = ({ title, children }) => {
         <h1>{title}</h1>
         <section>{children}</section>
       </main>
-      <CartContainer />
+      {/* <CartContainer /> */}
       <Footer />
     </div>
   );

@@ -5,7 +5,10 @@ import { getDish } from '@/services/get-dish';
 
 export const DishContainer = async ({ id }) => {
 
+  console.log('dishcontainer');
   const dish = await getDish(id);
+
+  console.log(dish);
 
   const { name, price, ingredients } = dish;
 
